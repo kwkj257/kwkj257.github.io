@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat+Alternates:wght@400;500&family=Montserrat:wght@300;400;500&family=Roboto+Flex:opsz@8..144&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Tourist Guide</title>
+</head>
+<body>
+
+
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="hamburger col-md-2">
+                    <div class="hamburger_box">
+                        <div class="hamburger_box_line"></div>
+                        <div class="hamburger_box_line"></div>
+                        <div class="hamburger_box_line"></div>
+                    </div>
+                </div>
+                <h1 class="heading col-md-8">Пожалуйста выберите район</h1>
+                <a href="index.html" class="col-md-2"><img src="icons/logos/Frame 1-2.svg" alt="logo" class="logo logo_title"></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="menu hide">
+        <div class="menu_bg" id="closeMenu"></div>
+        <div class="menu_modal">
+            <div class="menu_modal_logo" id="closeMenu"></div>
+            <div href="#" class="menu_modal_profile" id="closeMenu" name="openReg" >
+                <img src="icons/menu/person.svg" alt="bybabyba" class="menu_modal_profile_img">
+                <div class="menu_modal_profile_text">Профиль</div>
+            </div>
+            <div class="menu_modal_sorry">Мы приносим свои извинения.<br><br>Смена языка временно недоступна</div>
+            <div class="menu_modal_lang">
+                <div class="menu_modal_lang_ru" id="sorry"></div>
+                <div class="menu_modal_lang_divider"></div>
+                <div class="menu_modal_lang_eng" id="sorry"></div>
+            </div>
+            <div class="individual individual_modal_menu col-md-2 offset-md-8">
+                <div class="descr descr_modal_menu">Индивидуальный проект</div>
+                <div class="divider"></div>
+                <a href="info.html" class="link_modal_menu">Подробнее</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="registration hide">
+        <div class="registration_bg"></div>
+        <div class="container">
+            <div class="registration_window">
+                <div class="registration_window_entry">
+                    <div class="registration_window_entry_login">Вход</div>
+                    <form class="registration_window_entry_form" action="profile.html" id="form">
+                        <input class="registration_window_entry_input" placeholder="Введите почту, логин, или телефон" name="entryLoginInput" maxlength="40"></input>
+                        <input class="registration_window_entry_input" placeholder="Введите пароль" name="entryPasswordInput"></input>
+                        <button class="registration_window_entry_submit" type="submit" value="Войти">Войти</button>
+                    </form>
+                    <div class="registration_window_entry_tree"></div>
+                    <div class="registration_window_entry_sun"></div>
+                    <div class="registration_window_entry_bench"></div>
+                    <div class="registration_window_entry_lake"></div>
+                    <div class="registration_window_entry_regist">Зарегистрироваться</div>
+                </div>
+
+
+
+                <div class="registration_window_question" style="display: none;">
+
+                    <div class="registration_window_question_withEmail">
+                        <div class="registration_window_question_withEmail_text">Войти через почту</div> 
+                        <div class="registration_window_question_withEmail_img"></div>
+                    </div>
+
+                    <div class="registration_window_question_withPhone">
+                        <div class="registration_window_question_withPhone_text">Войти по номеру телефона</div> 
+                        <div class="registration_window_question_withPhone_img"></div>
+                    </div>
+
+                </div>
+
+                <div class="registration_window_email_wrapper hide">
+                    <form class="registration_window_email_form" id="formForEmail">
+                        <input class="registration_window_email_input" type="email" placeholder="Введите адрес почты" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_email_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_email_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
+                        <button class="registration_window_email_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                    </form>
+                </div>          
+
+
+                <div class="registration_window_phone_wrapper hide">
+                <form class="registration_window_phone_form" id="formForPhone">
+                        <input class="registration_window_phone_input" type="tel" placeholder="Введите номер телефона" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
+                        <button class="registration_window_phone_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                    </form>
+                </div>          
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <section class="district">
+        <div class="district_bg hide" id="closeModal"></div>
+        <div class="container">
+            <div class="district_border col-md-12">
+                <img src="icons/rayoni/Center.svg" class="district_border_center distr" data-parent="Центр (Кировский Район)"></img>
+                <img src="icons/rayoni/Chernikovka.svg" class="district_border_chernikovka distr" data-parent="Черниковка"></img>
+                <img src="icons/rayoni/Dema.svg" class="district_border_dema distr" data-parent="Дема"></img>
+                <img src="icons/rayoni/I don't know.svg" class="district_border_park distr" data-parent="..."></img>
+                <img src="icons/rayoni/Inors.svg" class="district_border_inors distr" data-parent="Инорс"></img>
+                <img src="icons/rayoni/Nizhegorodka.svg" class="district_border_nizhegorodka distr" data-parent="Нижегородка"></img>
+                <img src="icons/rayoni/ShakSha.svg" class="district_border_shaksha distr" data-parent="Шакша"></img>
+                <img src="icons/rayoni/Sipailovo.svg" class="district_border_sipailovo distr" data-parent="Сипайлово"></img>
+                <img src="icons/rayoni/Something in the Chernikovka.svg" class="district_border_somethingChernuaga distr" data-parent="Трамвайная"></img>
+                <img src="icons/rayoni/Sovietstki rajon.svg" class="district_border_soviet distr" data-parent="Советский район"></img>
+                <img src="icons/rayoni/Zaton.svg" class="district_border_zaton distr" data-parent="Затон"></img>
+                <img src="icons/rayoni/Zelenyaja Roscha.svg" class="district_border_zelenaya distr" data-parent="Зеленая Роща"></img>
+                <div class="district_border_modal hide">
+                    <img src="icons/Group 5.svg" class="district_border_modal_close" id="closeModal"></img>
+                    <div class="district_border_modal_descr"></div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <section class="guide">
+        <div class="container text-center">
+            <div class="guide_title">Как пользоваться сайтом?</div>
+            <div class="row">
+            <div class="guide_border col-md-5">
+                    <div class="guide_border_descr">1. Выберите нужный район<br>и кликните на него</div>
+                    <img src="img/main/guide/Rayoni.svg" alt="123" class="guide_border_img">
+                </div>
+
+                <div class="guide_border col-md-5 ms-md-auto">
+                    <div class="guide_border_descr">2. Подтвердите свой выбор, нажав на кнопку “Перейти”</div>
+                    <img src="img/main/guide/Group 10.svg" alt="123" class="guide_border_img">
+                </div>
+
+                <div class="guide_border col-md-5 gy-4">
+                    <div class="guide_border_descr" style="padding: 50px">3.  Получите подробную<br>информацию о районе</div>
+                    <img src="img/main/guide/Kirovsky Rajonn.svg" alt="123" class="guide_border_img">
+                </div>
+
+                <div class="guide_border col-md-5 gy-4 ms-md-auto">
+                    <div class="guide_border_descr">Также вы можете зарегистрироваться и, зайдя в профиль, голосовать за добавление достопримечательности/отеля/ресторана</div>
+                    <img src="img/main/guide/Group 13.svg" alt="123" class="guide_border_img" name="openReg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <img src="icons/logos/Small logo.svg" class="logo logo_footer col-md-2"></img>
+                <div class="individual col-md-2 offset-md-8">
+                    <div class="descr descr_footer">Индивидуальный проект</div>
+                    <div class="divider"></div>
+                    <a href="info.html"><button class="btn btn_footer">Подробнее</button></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

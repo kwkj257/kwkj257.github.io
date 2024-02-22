@@ -1,0 +1,993 @@
+nav
+    position: absolute
+    width: 100%
+    height: 94px
+    background: rgba(183, 252, 248, 0.34)
+    z-index: 99
+
+
+.menu
+    position: absolute
+    height: 100vh
+    width: 100vw
+    &_bg
+        position: absolute
+        transition: 1s all
+        height: 100vh
+        width: 100vw
+        background-color: rgba(0, 0, 0)
+        z-index: 998
+    &_modal
+        position: absolute
+        z-index: 9999
+        height: 100vh
+        width: 37vw
+        background-color: #DCF7FF
+        z-index: 998
+        left: -37vw
+        transition: 1s all
+        &_logo
+            cursor: pointer
+            margin: 15px auto
+            border-radius: 29px
+            display: block
+            z-index: 999
+            height: 117px
+            width: 224px
+            background: #b4b4b4 url('../icons/menu/Logo-3.svg') center center/cover no-repeat 
+            box-shadow: 7px 6px 5px #0000005a
+        &_profile
+            position: relative
+            display: block
+            margin: 50px auto
+            height: 108px
+            width: 340px
+            background-color: #FFFFFF
+            border-radius: 18px
+            &_img
+                height: 80px
+                margin: 14px 14px
+            &_text
+                position: absolute
+                width: 200px
+                font-family: 'Montserrat'
+                font-size: 35px
+                font-weight: 300
+                top: 29px
+                left: 130px
+        &_sorry
+            position: absolute
+            top:55%
+            left:50%
+            transform: translate(-50%, -50%)
+            color: #000000
+            text-align: center
+            font-family: 'Montserrat'
+            font-size: 17px
+            font-weight: 300
+            transition: 1s all
+            opacity: 0
+        &_lang
+            padding: 42px 0 0 0
+            margin: 0 auto
+            display: flex
+            justify-content: space-between
+            height: 43px
+            width: 170px
+            transition: 1s all
+            &_ru
+                height: 43px
+                width: 66px
+                background: #b4b4b4 url('../icons/menu/Flag_of_Russia 1.svg') center center/cover no-repeat 
+                border-radius: 4px
+                cursor: pointer
+            &_divider
+                height: 43px
+                width: 2px
+                background-color: #000000
+            &_eng
+                height: 43px
+                width: 66px
+                background: #b4b4b4 url('../icons/menu/flag-angliyskih-korolevskih-vms-i-neofitsialnyy-flag-anglii-i-shotlandii-nahodivshihsya-v-lichnoy-unii-1606-1649-foto 1.svg') center center/cover no-repeat 
+                border-radius: 4px
+                cursor: pointer
+
+
+
+
+
+.hamburger
+    position: relative
+    &_box
+        cursor: pointer
+        margin: 28px auto
+        align-content: space-between
+        width: 43px
+        height: 33px 
+        z-index: 1000
+        &_line
+            border-radius: 13px
+            margin-block-end: 6px
+            height: 7px
+            width: 42px
+            background: #699890
+            &_kirov
+                border-radius: 13px
+                background: #698198
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset
+
+
+
+
+
+.registration
+    z-index: 200
+    position: absolute
+    height: 100vh
+    width: 100%
+    top: 0
+    left: 0
+    transition: 1s all
+    &_bg
+        position: absolute
+        height: 100%
+        width: 100%
+        background-color: #0000009c
+        transition: 1s all
+    &_window    
+        position: absolute
+        width: 816px
+        height: 555px
+        border-radius: 40px
+        top: 12.3%
+        left:50%
+        transform: translate(-50%)
+        background-color: #A3BDAA
+        z-index: 999
+        &_entry
+            transition: 1s all
+            &_login
+                position: absolute
+                width: 140px
+                height: 92px
+                margin: 30px 30px
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                border-radius: 18px
+                font-family: 'Roboto Mono'
+                font-weight: 400
+                font-size: 38px
+                padding: 10px
+                text-align: center
+                color: #224F29
+            &_input
+                position: absolute
+                width: 400px
+                height: 50px
+                margin: 160px 20px
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                position: absolute
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 23px
+                padding-left: 20px
+                color: rgba(0, 0, 0)
+            &_submit
+                box-sizing: border-box
+                position: absolute
+                width: 140px
+                height: 59px
+                margin: 347px 30px
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 23px
+                color: rgba(0, 0, 0)
+                &:active
+                    border: 0.5px solid #000000
+                    background: #ffffff
+            &_regist
+                position: absolute
+                margin: 457px 27px
+                width: 300px
+                height: 50px
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                font-family: 'Roboto Mono'
+                font-weight: 400
+                padding: 4px
+                font-size: 26px
+                text-align: center
+                color: #224F29
+                cursor: pointer
+            &_tree
+                position: absolute
+                height: 200px
+                width: 150px
+                background: url('../icons/registation/tree.svg') center center/cover no-repeat 
+                top: 300px
+                left: 380px
+            &_sun
+                position: absolute
+                height: 116px
+                width: 146px
+                background: url('../icons/registation/sun.svg') center center/cover no-repeat 
+                top: 280px
+                left: 640px
+            &_bench
+                position: absolute
+                height: 70px
+                width: 148px
+                background: url('../icons/registation/bench.svg') center center/cover no-repeat 
+                top: 420px
+                left: 520px
+            &_lake
+                position: absolute
+                height: 35px
+                width: 212px
+                background: url('../icons/registation/lake.svg') center center/cover no-repeat 
+                top: 510px
+                left: 500px
+        &_question
+            position: absolute
+            top: 49%
+            left:50%
+            transform: translate(-50%, -50%)
+            height: 40%
+            width: 80%
+            display: flex 
+            justify-content: space-between
+            transition: 1s all
+            &_withEmail
+                height: 100%
+                width: 45%
+                background-color: #fefefe5f
+                transition: 1s all
+                padding: 50px
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 23px
+                text-align: center
+                color: #232323
+                cursor: pointer
+                &:hover
+                    background-color: #fefefec4
+                    scale: 1.2
+                &_img
+                    margin: 18px auto
+                    height: 45%
+                    width: 40%
+                    background: url('../icons/registation/gmail-icon-logo.svg') center center/cover no-repeat 
+            &_withPhone
+                height: 100%
+                width: 45%
+                background-color: #fefefe5f
+                transition: 1s all
+                padding: 50px
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 21px
+                text-align: center
+                color: #232323
+                cursor: pointer
+                &:hover
+                    background-color: #fefefec4
+                    scale: 1.2
+                &_img
+                    margin: 10px auto
+                    height: 80%
+                    width: 40%
+                    background: url('../img/registration/a6d5a0c4-c556-40d3-9a05-7d6c5be1d4bd-2.png') center center/cover no-repeat 
+        &_email
+            transition: 1s all
+            &_wrapper
+                position: absolute
+                top: 10%
+                left:50%
+                transform: translate(-50%)
+                height: 430px
+                width: 500px
+                background: #c6e9c6
+                border-radius: 28px
+                transition: 1s all
+            &_input
+                position: absolute
+                width: 400px
+                height: 50px
+                top: 10%
+                left:50%
+                transform: translate(-50%)
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                position: absolute
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 23px
+                color: rgba(0, 0, 0)
+            &_submit
+                box-sizing: border-box
+                position: absolute
+                width: 140px
+                height: 59px
+                top: 80%
+                left: 76%
+                transform: translate(-50%)
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 21px
+                color: rgba(0, 0, 0)
+                transition: 0.3s all
+                &:active
+                    border: 0.5px solid #000000
+                    background: #222222
+        &_phone
+            &_wrapper
+                position: absolute
+                top: 10%
+                left:50%
+                transform: translate(-50%)
+                height: 430px
+                width: 500px
+                background: #c6e9c6
+                border-radius: 28px
+                transition: 1s all
+            &_input
+                position: absolute
+                width: 400px
+                height: 50px
+                top: 10%
+                left:50%
+                transform: translate(-50%)
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                position: absolute
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 23px
+                color: rgba(0, 0, 0)
+            &_submit
+                box-sizing: border-box
+                position: absolute
+                width: 140px
+                height: 59px
+                top: 80%
+                left: 76%
+                transform: translate(-50%)
+                background: #D9D9D9
+                border: 1px solid #000000
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                font-family: 'Roboto Flex'
+                font-weight: 400
+                font-size: 21px
+                color: rgba(0, 0, 0)
+                transition: 0.3s all
+                &:active
+                    border: 0.5px solid #000000
+                    background: #222222
+
+
+input[name="entryPasswordInput"]
+    margin: 260px 20px
+
+input[name="entryNewPaswordInput"]
+    top: 55%
+
+input[name="entryNewNameInput"]
+    top: 32%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.heading
+    padding: 23px
+    color: #144A43
+    text-align: center
+    font-family: 'Montserrat Alternates'
+    font-size: 28px
+    font-weight: 500
+    &_kirov
+        color: #603333
+        text-align: center
+        font-family: 'Montserrat'
+        font-size: 30px
+        font-weight: 600
+
+.logo
+    scale: 0.7
+    opacity: 1
+    transition: 1s all
+    &_title
+        scale: 1
+        width: 100%
+        height: 100%
+    
+
+.district
+    padding: 120px
+    position: relative
+    top: 0px
+    height: 110%
+    width: 100%
+    background: #b4b4b4 url('../img/main/841f0b5034211a884a553864b77f79e4 1.jpg') center center/cover no-repeat 
+    z-index: 2
+    &_bg
+        top: 0px
+        left: 0
+        position: absolute
+        width: 100vw
+        background-color: rgba(0, 0, 0)
+        z-index: 10
+    &_border
+        position: relative
+        margin: 0 auto
+        width: 960px
+        height: 581px
+        background: rgba(255, 255, 255, 0.85)
+        border-radius: 71px
+        &_center
+            cursor: pointer
+            transition: 1.5s all
+            position: absolute
+            top: 55%
+            left: 29%
+            z-index: 2
+        &_soviet
+            cursor: pointer
+            position: absolute
+            top: 26%
+            left: 39%
+        &_park
+            cursor: pointer
+            position: absolute
+            top: 54%
+            left: 47.4%
+        &_somethingChernuaga
+            cursor: pointer
+            position: absolute
+            top: 25.5%
+            left: 53.3%
+        &_zelenaya
+            cursor: pointer
+            position: absolute
+            top: 64%
+            left: 38% 
+        &_sipailovo
+            cursor: pointer
+            position: absolute
+            top: 37%
+            left: 53.4%
+        &_inors
+            cursor: pointer
+            position: absolute
+            top: 36.4%
+            left: 63%
+        &_chernikovka
+            cursor: pointer
+            position: absolute
+            top: 13.7%
+            left: 55.3%
+        &+:hover
+            cursor: pointer
+            scale: 1.4
+        &_nizhegorodka
+            cursor: pointer
+            position: absolute
+            top: 55.7%
+            left: 26.1%
+        &_shaksha
+            cursor: pointer
+            position: absolute
+            top: 30%
+            left: 79%
+        &_dema
+            cursor: pointer
+            position: absolute
+            top: 73%
+            left: 8%
+        &_zaton
+            cursor: pointer
+            position: absolute
+            top: 30%
+            left: 15%
+        &_modal
+            width: 300px
+            height: 350px
+            position: absolute
+            border-radius: 17px
+            border: 2px solid #003B72
+            background: rgba(175, 217, 255, 0.62)
+            z-index: 999
+            &_close
+                position: absolute
+                top: 2.7%
+                right: 3.2%
+                cursor: pointer
+                z-index: 999
+                scale: 2.3
+            &_descr
+                position: absolute
+                width: 90%
+                color: #000
+                text-align: center
+                font-family: 'Montserrat'
+                font-size: 33px
+                font-weight: 300
+                top: 100px
+                left:50%
+                transform: translate(-50%, -50%)
+            &_confirm
+                position: absolute
+                width: 230px
+                height: 60px
+                display: block
+                top:84%
+                left:50%
+                transform: translate(-50%, -50%)
+                border-radius: 7px
+                border: 1.5px solid #003B72
+                background: #5EB4FF
+                color: #000
+                font-family: 'Montserrat'
+                font-size: 20px
+                padding: 10px 0 0 0
+                font-weight: 400
+                text-align: center
+                transition: all 1s 
+                &:hover
+                    background: #add9ff
+            &_denide
+                border-radius: 7px
+                position: absolute
+                width: 230px
+                height: 120px
+                top:70%
+                left:50%
+                transform: translate(-50%, -50%)
+                color: #000
+                font-family: 'Montserrat'
+                font-size: 17px
+                font-weight: 400
+                text-align: center
+                transition: all 1s 
+                
+
+.guide
+    padding: 12px 0 0 0
+    background: #b4b4b4 url('../img/main/yybvbv2v5i4ahg0vg2fuyyttdjh30h0c 1.jpg') center center/cover no-repeat
+    height: 1300px
+    display: flex
+    &_title
+        color: #124C5E
+        text-align: center
+        font-family: 'Montserrat'
+        font-size: 38px
+        font-weight: 400
+    &_border
+        transform: translateY(30px)
+        height: 550px
+        border-radius: 24px
+        background: rgba(255, 255, 255, 0.89)
+        &_descr
+            padding: 20px
+            color: #000
+            text-align: center
+            font-family: 'Montserrat'
+            font-size: 24px
+            font-weight: 300
+        &_img
+            display: block
+            scale: 1.5
+            margin: 50px auto
+
+#openReg
+    cursor: pointer
+
+footer
+    height: 98px
+    background-color: #141414
+    
+.descr
+    &_footer
+        padding: 6px 0 0 0
+        color: #FFF
+        text-align: center
+        font-family: 'Montserrat'
+        font-size: 14px
+        font-weight: 400
+    &_modal_menu
+        padding: 18px 0 0 0
+        color: #000000
+        text-align: center
+        font-family: 'Montserrat'
+        font-size: 17px
+        font-weight: 400
+.btn
+    &_footer
+        width: 100%
+        height: 60%
+        border-radius: 15px
+        background: #D9D9D9
+        border: none
+        outline: none
+        color: #181818
+        text-align: center
+        font-family: 'Montserrat'
+        font-size: 17px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+
+.divider
+    width: 100%
+    height: 8px
+
+header
+    position: absolute
+    width: 100%
+    height: 94px
+    background: rgba(127, 148, 175, 0.67)
+    z-index: 999
+
+.subheader
+    position: relative
+    height: 1100px
+    background: #b4b4b4 url('../img/kirovsky/Nesterov.jpeg') center center/cover no-repeat
+    padding: 340px 0 0 0
+    &_title
+        color: #000C12
+        text-align: center
+        font-family: 'Montserrat'
+        font-size: 25px
+        font-weight: 400
+        height: 500px
+        border-radius: 39px
+        background: rgba(255, 255, 255, 0.75)
+        padding: 130px 0 0 0
+        &_link
+            color: #000C12
+            font-family: 'Montserrat'
+            font-size: 25px
+            font-weight: 400
+            text-decoration-line: underline
+
+.carousel
+    &_img
+        &_dostst
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/salavat.jpeg') center center/cover no-repeat
+        &_dostnd
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/7 girls.jpeg') center center/cover no-repeat
+        &_dostrd
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/art.jpg') center center/cover no-repeat
+        &_hotlst
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/hilton.jpg') center center/cover no-repeat
+        &_hotlnd
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/Гостиница_Башкирия 1.jpg') center center/cover no-repeat
+        &_hotlrd
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/nesterov hotel.jpg') center center/cover no-repeat
+        &_restst
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/meal meal.jpg') center center/cover no-repeat
+        &_restnd
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/dysuk.jpeg') center center/cover no-repeat
+        &_restrd
+            height: 800px
+            background: #b4b4b4 url('../img/kirovsky/sherlok.jpg') center center/cover no-repeat
+        
+    &_dostoprim
+        position: relative
+        z-index: 9999
+        bottom: 0.001%
+        right: 0.001%
+        &_question
+            position: absolute
+            bottom: 0.001%
+            left: 0.001%
+            height: 74px
+            width: 634px
+            flex-shrink: 0
+            border-radius: 30px
+            background: rgba(255, 254, 254, 0.36)
+            text-align: center
+            color: #000
+            font-family: 'Montserrat'
+            font-size: 29px
+            font-weight: 500
+            margin-bottom: 700px
+            padding: 14px 0 0 0
+        &_descr
+            position: absolute
+            bottom: 0.001%
+            left: 0.001%
+            background: rgba(255, 254, 254, 0.60)
+            height: 200px
+            flex-shrink: 0
+            color: #000
+            text-align: center
+            font-family: 'Montserrat'
+            font-size: 19px
+            font-weight: 400
+            padding: 30px 0 0 0
+            margin-bottom: 100px
+            &_link
+                color: #000
+                font-family: 'Montserrat'
+                font-size: 19px
+                font-weight: 400
+        &_link
+            width: 100px
+            height: 120px
+            position: absolute
+            display: block
+            margin: 60px auto
+            z-index: 999
+            bottom: 1px
+            background: #b4b4b4 url('../icons/kirovsky/08fa0698d0b3a89afa6d85ef0855c765.jpg') center center/cover no-repeat
+            border-radius: 16px
+            scale: 0.6
+    &_hotel
+        position: relative
+        z-index: 9999
+        bottom: 0.001%
+        right: 0.001%
+        &_question
+            position: absolute
+            bottom: 0.001%
+            left: 0.001%
+            height: 74px
+            width: 634px
+            flex-shrink: 0
+            border-radius: 30px
+            background: rgba(255, 254, 254, 0.36)
+            text-align: center
+            color: #000
+            font-family: 'Montserrat'
+            font-size: 29px
+            font-weight: 500
+            margin-bottom: 700px
+            padding: 14px 0 0 0
+        &_descr
+            position: absolute
+            bottom: 0.001%
+            left: 0.001%
+            background: rgba(255, 254, 254, 0.60)
+            height: 200px
+            flex-shrink: 0
+            color: #000
+            padding: 15px 0 0 0
+            margin-bottom: 100px
+            &_text
+                width: 100%
+                text-align: center
+                font-family: 'Montserrat'
+                font-size: 28px
+                font-weight: 400
+            &_price
+                position: absolute
+                display: block
+                width: 23%
+                left: 44px
+                margin: 16px 0 0 0 
+                text-align: center
+                font-family: 'Montserrat'
+                font-size: 21px
+                font-weight: 300
+            &_link
+                position: absolute
+                width: 227px
+                height: 30px
+                display: block
+                z-index: 999
+                bottom: 1px
+                right: 1px
+                background: #b4b4b4 url('../icons/kirovsky/dgqnllgmtklemoh2i0gj.png') center center/cover no-repeat
+                transition: 1s all
+            &_rating
+                position: absolute
+                bottom: 15px
+                left: 20px
+                scale: 1.2
+    &_rest
+        position: relative
+        z-index: 9999
+        bottom: 0.001%
+        right: 0.001%
+        &_question
+            position: absolute
+            bottom: 0.001%
+            left: 0.001%
+            height: 74px
+            width: 634px
+            flex-shrink: 0
+            border-radius: 30px
+            background: rgba(255, 254, 254, 0.36)
+            text-align: center
+            color: #000
+            font-family: 'Montserrat'
+            font-size: 29px
+            font-weight: 500
+            margin-bottom: 700px
+            padding: 14px 0 0 0
+        &_descr
+            position: absolute
+            bottom: 0.001%
+            left: 0.001%
+            background: rgba(255, 254, 254, 0.60)
+            height: 200px
+            flex-shrink: 0
+            color: #000
+            padding: 15px 0 0 0
+            margin-bottom: 100px
+            &_text
+                width: 100%
+                text-align: center
+                font-family: 'Montserrat'
+                font-size: 28px
+                font-weight: 400
+            &_price
+                position: absolute
+                display: block
+                width: 33%
+                left: 44px
+                margin: 17px 0 0 0 
+                text-align: center
+                font-family: 'Montserrat'
+                font-size: 21px
+                font-weight: 300
+            &_link
+                position: absolute
+                width: 120px
+                height: 120px
+                display: block
+                z-index: 999
+                bottom: 1px
+                background: #b4b4b4 url('../icons/kirovsky/08fa0698d0b3a89afa6d85ef0855c765.jpg') center center/cover no-repeat
+                border-radius: 16px
+                left: 340px
+                scale: 0.6
+            &_rating
+                position: absolute
+                bottom: 15px
+                left: 20px
+                scale: 1.2
+            
+.info
+    height: 100vh
+    &_text
+        padding: 20px
+        color: #000
+        text-align: center
+        font-family: 'Montserrat'
+        font-weight: 300
+
+#info_1
+    padding: 40px 0 0 0
+#info_2
+    padding: 100px 0 0 0
+#info_3
+    padding: 120px 0 0 0
+
+.back
+    top: 3%
+    left: 3%
+    position: absolute
+    height: 50px
+    width: 160px
+    color: #000
+    text-align: center
+    font-family: 'Montserrat'
+    font-weight: 300
+    padding: 10px 0 0 0
+    transition: 1s all
+    z-index: 999
+    cursor: pointer
+
+
+.individual
+    &_modal_menu
+        border-radius: 22px
+        margin: 140px auto
+        width: 326px
+        height: 158px
+        background-color: #ffffffce
+    &_navigation
+        margin: -18px 0
+        right: 100px
+        position: absolute
+        scale: 0.6
+
+.link_modal_menu
+    width: 70%
+    height: 40%
+    border-radius: 15px
+    background: #050505
+    border: none
+    display: block
+    margin: 12px auto
+    outline: none
+    color: #f6f6f6
+    padding: 17px 0 0 0
+    text-align: center
+    font-family: 'Montserrat'
+    font-size: 22px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    cursor: pointer
+    
+.navigation
+    position: relative
+    width: 100%
+    height: 120px
+    background: rgba(186, 230, 255, 0.64)
+    &_logo
+        position: absolute
+        cursor: pointer
+        margin: 0 0
+        left:15%
+        transform: translate(-50%)
+        border-radius: 29px
+        display: block
+        z-index: 999
+        height: 117px
+        width: 224px
+        background: url('../icons/menu/Logo-3.svg') center center/cover no-repeat 
+        box-shadow: 7px 6px 5px #0000005a
+        scale: 0.7
+    &_profile
+        position: absolute
+        width: 240px
+        left:85%
+        transform: translate(-50%)
+        &_img
+            margin: 10px auto
+            height: 70px
+            width: 70px
+            background: url('../img/profile/Unknown_person.jpg') center center/cover no-repeat 
+            border: 1px solid #000000
+            border-radius: 13px
+
+        &_name
+            margin:10px auto
+            width: 228px
+            height: 25px
+            background: #FFFFFF
+            border: 1px solid #1e1d1d
+            border-radius: 4px
+            color: #000
+            text-align: center
+            font-family: 'Montserrat'
+            font-weight: 400
+    &_bottom
+        position: absolute
+        bottom: 0
+        left: 0
