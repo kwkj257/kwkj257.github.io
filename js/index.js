@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
           menu = document.querySelector('.menu'),
           menuBg = document.querySelector('.menu_bg'),
           menuModal = document.querySelector('.menu_modal'),
-          menuLogo = document.querySelector('.menu_modal_logo'),
           logo = document.querySelector('.logo'),
           menuSorry = document.querySelector('.menu_modal_sorry'),
           menuLang = document.querySelector('.menu_modal_lang'),
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     // Константы блока районов
           districts = document.querySelectorAll('.distr'),
           modal = document.querySelector('.district_border_modal'),
-          modalClose = document.querySelector('.district_border_modal_close'),
           modalText = document.querySelector('.district_border_modal_descr'),
           modalBg = document.querySelector('.district_bg'),
           modalCloses = document.querySelectorAll('#closeModal'),
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
           formElement = document.getElementById('form'),
           regBtn = document.querySelector('.registration_window_entry_regist'),
           questionWrapper = document.querySelector('.registration_window_question'),
-          regQuestion = document.querySelector('.registration_window_question'),
           regWithEmail = document.querySelector('.registration_window_question_withEmail'),
           withEmailWrapper = document.querySelector('.registration_window_email_wrapper'),
           formForEmail = document.getElementById('formForEmail'),
@@ -53,12 +50,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     formElement.addEventListener('submit', (e) => {
         const formData = new FormData(formElement);
         const login = formData.get('entryLoginInput');
-        const password = formData.get('entryPasswordInput');
-        let bd = {
-            name: login,
-            pasword: password
-        }
-
         localStorage.setItem('name', login)
     })
 

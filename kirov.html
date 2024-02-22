@@ -28,6 +28,89 @@
             </div>
         </div>
     </header>
+    
+    
+    <div class="menu hide">
+        <div class="menu_bg" id="closeMenu"></div>
+        <div class="menu_modal menu_modal_kirov">
+            <div class="menu_modal_logo" id="closeMenu"></div>
+            <div href="#" class="menu_modal_profile" id="closeMenu" name="openReg" >
+                <img src="icons/menu/person.svg" alt="bybabyba" class="menu_modal_profile_img">
+                <div class="menu_modal_profile_text">Профиль</div>
+            </div>
+            <div class="menu_modal_sorry">Мы приносим свои извинения.<br><br>Смена языка временно недоступна</div>
+            <div class="menu_modal_lang">
+                <div class="menu_modal_lang_ru" id="sorry"></div>
+                <div class="menu_modal_lang_divider"></div>
+                <div class="menu_modal_lang_eng" id="sorry"></div>
+            </div>
+            <div class="individual individual_modal_menu">
+                <div class="descr descr_modal_menu">Индивидуальный проект</div>
+                <div class="divider"></div>
+                <a href="info.html" class="link_modal_menu">Подробнее</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="registration hide">
+        <div class="registration_bg"></div>
+        <div class="container">
+            <div class="registration_window registration_window_kirov">
+                <div class="registration_window_entry">
+                    <div class="registration_window_entry_login">Вход</div>
+                    <form class="registration_window_entry_form" action="profile.html" id="form">
+                        <input class="registration_window_entry_input" placeholder="Введите почту, логин, или телефон" name="entryLoginInput" maxlength="40"></input>
+                        <input class="registration_window_entry_input" placeholder="Введите пароль" name="entryPasswordInput"></input>
+                        <button class="registration_window_entry_submit" type="submit" value="Войти">Войти</button>
+                    </form>
+                    <div class="registration_window_entry_tree"></div>
+                    <div class="registration_window_entry_sun"></div>
+                    <div class="registration_window_entry_bench"></div>
+                    <div class="registration_window_entry_lake"></div>
+                    <div class="registration_window_entry_regist">Зарегистрироваться</div>
+                </div>
+
+
+
+                <div class="registration_window_question" style="display: none;">
+
+                    <div class="registration_window_question_withEmail">
+                        <div class="registration_window_question_withEmail_text">Войти через почту</div> 
+                        <div class="registration_window_question_withEmail_img"></div>
+                    </div>
+
+                    <div class="registration_window_question_withPhone">
+                        <div class="registration_window_question_withPhone_text">Войти по номеру телефона</div> 
+                        <div class="registration_window_question_withPhone_img"></div>
+                    </div>
+
+                </div>
+
+                <div class="registration_window_email_wrapper hide">
+                    <form class="registration_window_email_form" id="formForEmail">
+                        <input class="registration_window_email_input" type="email" placeholder="Введите адрес почты" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_email_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_email_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
+                        <button class="registration_window_email_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                    </form>
+                </div>          
+
+
+                <div class="registration_window_phone_wrapper hide">
+                <form class="registration_window_phone_form" id="formForPhone">
+                        <input class="registration_window_phone_input" type="tel" placeholder="Введите номер телефона" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
+                        <button class="registration_window_phone_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                    </form>
+                </div>          
+
+
+            </div>
+        </div>
+    </div>
+
 
 
     <section class="subheader">
@@ -37,7 +120,6 @@
             </div>
         </div>
     </section>
-
 
 
 
