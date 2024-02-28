@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,15 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat+Alternates:wght@400;500&family=Montserrat:wght@300;400;500&family=Roboto+Flex:opsz@8..144&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat+Alternates:wght@400;500&family=Montserrat:wght@300;400;500&family=Roboto+Flex:opsz@8..144&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Tourist Guide</title>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -24,17 +29,18 @@
                     </div>
                 </div>
                 <div class="heading heading_kirov col-md-8">КИРОВСКИЙ РАЙОН (ЦЕНТР)</div>
-                <a href="index.html" class="col-md-2"><img src="/icons/logos/Logo.svg" alt="logo" class="logo logo_title"></a>
+                <a href="index.html" class="col-md-2"><img src="/icons/logos/Logo.svg" alt="logo"
+                        class="logo logo_title"></a>
             </div>
         </div>
     </header>
-    
-    
+
+
     <div class="menu hide">
         <div class="menu_bg" id="closeMenu"></div>
         <div class="menu_modal menu_modal_kirov">
             <div class="menu_modal_logo" id="closeMenu"></div>
-            <div href="#" class="menu_modal_profile" id="closeMenu" name="openReg" >
+            <div href="#" class="menu_modal_profile" id="closeMenu" name="openReg">
                 <img src="icons/menu/person.svg" alt="bybabyba" class="menu_modal_profile_img">
                 <div class="menu_modal_profile_text">Профиль</div>
             </div>
@@ -60,8 +66,10 @@
                 <div class="registration_window_entry">
                     <div class="registration_window_entry_login">Вход</div>
                     <form class="registration_window_entry_form" action="profile.html" id="form">
-                        <input class="registration_window_entry_input" placeholder="Введите почту, логин, или телефон" name="entryLoginInput" maxlength="40"></input>
-                        <input class="registration_window_entry_input" placeholder="Введите пароль" name="entryPasswordInput"></input>
+                        <input class="registration_window_entry_input" placeholder="Введите почту, логин, или телефон"
+                            name="entryLoginInput" maxlength="40"></input>
+                        <input class="registration_window_entry_input" placeholder="Введите пароль"
+                            name="entryPasswordInput"></input>
                         <button class="registration_window_entry_submit" type="submit" value="Войти">Войти</button>
                     </form>
                     <div class="registration_window_entry_tree"></div>
@@ -76,12 +84,12 @@
                 <div class="registration_window_question" style="display: none;">
 
                     <div class="registration_window_question_withEmail">
-                        <div class="registration_window_question_withEmail_text">Войти через почту</div> 
+                        <div class="registration_window_question_withEmail_text">Войти через почту</div>
                         <div class="registration_window_question_withEmail_img"></div>
                     </div>
 
                     <div class="registration_window_question_withPhone">
-                        <div class="registration_window_question_withPhone_text">Войти по номеру телефона</div> 
+                        <div class="registration_window_question_withPhone_text">Войти по номеру телефона</div>
                         <div class="registration_window_question_withPhone_img"></div>
                     </div>
 
@@ -89,22 +97,30 @@
 
                 <div class="registration_window_email_wrapper hide">
                     <form class="registration_window_email_form" id="formForEmail">
-                        <input class="registration_window_email_input" type="email" placeholder="Введите адрес почты" name="entryNewEmailInput" maxlength="40"></input>
-                        <input class="registration_window_email_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
-                        <input class="registration_window_email_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
-                        <button class="registration_window_email_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                        <input class="registration_window_email_input" type="email" placeholder="Введите адрес почты"
+                            name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_email_input" type="text" placeholder="Введите свое имя"
+                            name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_email_input" type="password" placeholder="Придумайте пароль"
+                            name="entryNewPaswordInput"></input>
+                        <button class="registration_window_email_submit" type="submit" value="Войти"
+                            id="refreshToEntry">Готово!</button>
                     </form>
-                </div>          
+                </div>
 
 
                 <div class="registration_window_phone_wrapper hide">
-                <form class="registration_window_phone_form" id="formForPhone">
-                        <input class="registration_window_phone_input" type="tel" placeholder="Введите номер телефона" name="entryNewEmailInput" maxlength="40"></input>
-                        <input class="registration_window_phone_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
-                        <input class="registration_window_phone_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
-                        <button class="registration_window_phone_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                    <form class="registration_window_phone_form" id="formForPhone">
+                        <input class="registration_window_phone_input" type="tel" placeholder="Введите номер телефона"
+                            name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input" type="text" placeholder="Введите свое имя"
+                            name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input" type="password" placeholder="Придумайте пароль"
+                            name="entryNewPaswordInput"></input>
+                        <button class="registration_window_phone_submit" type="submit" value="Войти"
+                            id="refreshToEntry">Готово!</button>
                     </form>
-                </div>          
+                </div>
 
 
             </div>
@@ -116,7 +132,12 @@
     <section class="subheader">
         <div class="container">
             <div class="subheader_title col-md-10 offset-md-1">
-                Ки́ровский райо́н(<a class="subheader_title_link" href="#">башк.</a> Киров районы) — <a class="subheader_title_link" href="#">один из семи городских районов</a> города <a class="subheader_title_link" href="#">Уфы</a>, расположенный в его южной части. Ввиду присоединения сельских поселений из <a class="subheader_title_link" href="#">Уфимского района</a> республики имеет некомпактную, состоящую из трёх отдельных частей, территорию. При этом между исторической основной и вновь обретённой частями есть поселения, не включённые в состав городского округа.
+                Ки́ровский райо́н(<a class="subheader_title_link" href="#">башк.</a> Киров районы) — <a
+                    class="subheader_title_link" href="#">один из семи городских районов</a> города <a
+                    class="subheader_title_link" href="#">Уфы</a>, расположенный в его южной части. Ввиду присоединения
+                сельских поселений из <a class="subheader_title_link" href="#">Уфимского района</a> республики имеет
+                некомпактную, состоящую из трёх отдельных частей, территорию. При этом между исторической основной и
+                вновь обретённой частями есть поселения, не включённые в состав городского округа.
             </div>
         </div>
     </section>
@@ -126,50 +147,69 @@
 
 
     <!-- Slider 1  -->
-    
+
     <div id="carouselLandmarks" class="carousel slide">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselLandmarks" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselLandmarks" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselLandmarks" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselLandmarks" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselLandmarks" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselLandmarks" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="d-block w-100 carousel_img_dostst"></div>
-            <div class="carousel_dostoprim">
-                <div class="container">
-                    <div class="carousel_dostoprim_question col-md-6 offset-md-3">Не хотите ли вы прогуляться по Уфе?</div>
-                    <div class="carousel_dostoprim_descr col-md-4 offset-md-7">Памятник Салава́ту Юла́еву — произведение советского скульптора-монументалиста <a href="#" class="carousel_dostoprim_descr_link">Сосланбека Тавасиева</a> в городе <a href="#" class="carousel_dostoprim_descr_link">Уфа</a>, посвящённое национальному герою <a href="#" class="carousel_dostoprim_descr_link">Башкортостана</a> <a href="#" class="carousel_dostoprim_descr_link">Салавату Юлаеву</a>.</div>
-                    <a href="https://go.2gis.com/3kzwjj" class="carousel_dostoprim_link col-md-1 offset-md-1"></a>
+            <div class="carousel-item active">
+                <div class="d-block w-100 carousel_img_dostst"></div>
+                <div class="carousel_dostoprim">
+                    <div class="container">
+                        <div class="carousel_dostoprim_question col-md-6 offset-md-3">Не хотите ли вы прогуляться по
+                            Уфе?</div>
+                        <div class="carousel_dostoprim_descr col-md-4 offset-md-7">Памятник Салава́ту Юла́еву —
+                            произведение советского скульптора-монументалиста <a href="#"
+                                class="carousel_dostoprim_descr_link">Сосланбека Тавасиева</a> в городе <a href="#"
+                                class="carousel_dostoprim_descr_link">Уфа</a>, посвящённое национальному герою <a
+                                href="#" class="carousel_dostoprim_descr_link">Башкортостана</a> <a href="#"
+                                class="carousel_dostoprim_descr_link">Салавату Юлаеву</a>.</div>
+                        <a href="https://go.2gis.com/3kzwjj" class="carousel_dostoprim_link col-md-1 offset-md-1"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-block w-100 carousel_img_dostnd"></div>
-            <div class="carousel_dostoprim">
-                <div class="container">
-                    <div class="carousel_dostoprim_descr col-md-4 offset-md-7">В 2015 году реконструирован ООО «Уралагротехсервис» к <a href="#" class="carousel_dostoprim_descr_link">XX саммиту ШОС</a> и <a href="#" class="carousel_dostoprim_descr_link">VII саммиту БРИКС[9]</a>: летом запущен светомузыкальный фонтан со скульптурами «<a href="#" class="carousel_dostoprim_descr_link">Семь девушек</a>»</div>
-                    <a href="https://go.2gis.com/ct3i5" class="carousel_dostoprim_link col-md-1 offset-md-1"></a>
+            <div class="carousel-item">
+                <div class="d-block w-100 carousel_img_dostnd"></div>
+                <div class="carousel_dostoprim">
+                    <div class="container">
+                        <div class="carousel_dostoprim_descr col-md-4 offset-md-7">В 2015 году реконструирован ООО
+                            «Уралагротехсервис» к <a href="#" class="carousel_dostoprim_descr_link">XX саммиту ШОС</a> и
+                            <a href="#" class="carousel_dostoprim_descr_link">VII саммиту БРИКС[9]</a>: летом запущен
+                            светомузыкальный фонтан со скульптурами «<a href="#"
+                                class="carousel_dostoprim_descr_link">Семь девушек</a>»
+                        </div>
+                        <a href="https://go.2gis.com/ct3i5" class="carousel_dostoprim_link col-md-1 offset-md-1"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-          <div class="d-block w-100 carousel_img_dostrd"></div>
-          <div class="carousel_dostoprim">
-              <div class="container">
-                  <div class="carousel_dostoprim_descr col-md-4 offset-md-7">«Арт-КВАДРАТ» — частное <a href="#" class="carousel_dostoprim_descr_link">арт-пространство</a> в городе <a href="#" class="carousel_dostoprim_descr_link">Уфе</a>, с ансамблем зданий постройки конца XIX — начала XX веков, часть которых — объекты культурного наследия</div>
-                  <a href="https://go.2gis.com/qyx0k" class="carousel_dostoprim_link col-md-1 offset-md-1"></a>
-              </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLandmarks" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Предыдущий</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselLandmarks" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Следующий</span>
-        </button>
+            <div class="carousel-item">
+                <div class="d-block w-100 carousel_img_dostrd"></div>
+                <div class="carousel_dostoprim">
+                    <div class="container">
+                        <div class="carousel_dostoprim_descr col-md-4 offset-md-7">«Арт-КВАДРАТ» — частное <a href="#"
+                                class="carousel_dostoprim_descr_link">арт-пространство</a> в городе <a href="#"
+                                class="carousel_dostoprim_descr_link">Уфе</a>, с ансамблем зданий постройки конца XIX —
+                            начала XX веков, часть которых — объекты культурного наследия</div>
+                        <a href="https://go.2gis.com/qyx0k" class="carousel_dostoprim_link col-md-1 offset-md-1"></a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselLandmarks"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselLandmarks"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
         </div>
     </div>
 
@@ -179,123 +219,134 @@
 
     <div id="carouselHotel" class="carousel slide">
         <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselHotel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselHotel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselHotel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselHotel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselHotel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselHotel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="d-block w-100 carousel_img_hotlst"></div>
-            <div class="carousel_hotel">
-                <div class="container">
-                    <div class="carousel_hotel_question col-md-6 offset-md-3">Отели, если хотите остановиться в центре</div>
-                    <div class="carousel_hotel_descr col-md-4 offset-md-1">
-                        <div class="carousel_hotel_descr_text">Hilton Garden Inn Ufa Riverside</div>
-                        <div class="carousel_hotel_descr_price">От 5,014₽<br>За ночь</div>
-                        <img src="icons/kirovsky/Rating.svg" class="carousel_hotel_descr_rating"></img>
-                        <a href="https://travel.yandex.ru/hotels/ufa/hilton-garden-inn-ufa-riverside/?adults=1&checkinDate=2024-02-20&checkoutDate=2024-02-21&childrenAges=&searchPagePollingId=781e5054a51f650cbc0567fa0b2d917-3-newsearch&seed=portal-hotels-search" class="carousel_hotel_descr_link"></a>
+            <div class="carousel-item active">
+                <div class="d-block w-100 carousel_img_hotlst"></div>
+                <div class="carousel_hotel">
+                    <div class="container">
+                        <div class="carousel_hotel_question col-md-6 offset-md-3">Отели, если хотите остановиться в
+                            центре</div>
+                        <div class="carousel_hotel_descr col-md-4 offset-md-1">
+                            <div class="carousel_hotel_descr_text">Hilton Garden Inn Ufa Riverside</div>
+                            <div class="carousel_hotel_descr_price">От 5,014₽<br>За ночь</div>
+                            <img src="icons/kirovsky/Rating.svg" class="carousel_hotel_descr_rating"></img>
+                            <a href="https://travel.yandex.ru/hotels/ufa/hilton-garden-inn-ufa-riverside/?adults=1&checkinDate=2024-02-20&checkoutDate=2024-02-21&childrenAges=&searchPagePollingId=781e5054a51f650cbc0567fa0b2d917-3-newsearch&seed=portal-hotels-search"
+                                class="carousel_hotel_descr_link"></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-block w-100 carousel_img_hotlnd"></div>
-            <div class="carousel_hotel">
-                <div class="container">
-                    <div class="carousel_hotel_descr col-md-4 offset-md-1">
-                        <div class="carousel_hotel_descr_text">Гостиница Башкирия</div>
-                        <div class="carousel_hotel_descr_price">От 5,929₽<br>За ночь</div>
-                        <img src="icons/kirovsky/Rating.svg" class="carousel_hotel_descr_rating"></img>
-                        <a href="https://travel.yandex.ru/hotels/ufa/gostinitsa-bashkiriia/?adults=1&checkinDate=2024-02-27&checkoutDate=2024-02-28&childrenAges=&searchPagePollingId=e3287e5b132dc5528b75dab9881ead9-2-newsearch&seed=portal-hotels-search" class="carousel_hotel_descr_link"></a>
+            <div class="carousel-item">
+                <div class="d-block w-100 carousel_img_hotlnd"></div>
+                <div class="carousel_hotel">
+                    <div class="container">
+                        <div class="carousel_hotel_descr col-md-4 offset-md-1">
+                            <div class="carousel_hotel_descr_text">Гостиница Башкирия</div>
+                            <div class="carousel_hotel_descr_price">От 5,929₽<br>За ночь</div>
+                            <img src="icons/kirovsky/Rating.svg" class="carousel_hotel_descr_rating"></img>
+                            <a href="https://travel.yandex.ru/hotels/ufa/gostinitsa-bashkiriia/?adults=1&checkinDate=2024-02-27&checkoutDate=2024-02-28&childrenAges=&searchPagePollingId=e3287e5b132dc5528b75dab9881ead9-2-newsearch&seed=portal-hotels-search"
+                                class="carousel_hotel_descr_link"></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-        <div class="d-block w-100 carousel_img_hotlrd"></div>
-        <div class="carousel_hotel">
-            <div class="container">
-                <div class="carousel_hotel_descr col-md-4 offset-md-1">
-                    <div class="carousel_hotel_descr_text">Nesterov Plaza</div>
-                    <div class="carousel_hotel_descr_price">От 6,800₽<br>За ночь</div>
-                    <img src="icons/kirovsky/Rating.svg" class="carousel_hotel_descr_rating"></img>
-                    <a href="https://travel.yandex.ru/hotels/ufa/nesterov-plaza/?adults=1&checkinDate=2024-02-20&checkoutDate=2024-02-21&childrenAges=&searchPagePollingId=781e5054a51f650cbc0567fa0b2d917-3-newsearch&seed=portal-hotels-search" class="carousel_hotel_descr_link"></a>
+            <div class="carousel-item">
+                <div class="d-block w-100 carousel_img_hotlrd"></div>
+                <div class="carousel_hotel">
+                    <div class="container">
+                        <div class="carousel_hotel_descr col-md-4 offset-md-1">
+                            <div class="carousel_hotel_descr_text">Nesterov Plaza</div>
+                            <div class="carousel_hotel_descr_price">От 6,800₽<br>За ночь</div>
+                            <img src="icons/kirovsky/Rating.svg" class="carousel_hotel_descr_rating"></img>
+                            <a href="https://travel.yandex.ru/hotels/ufa/nesterov-plaza/?adults=1&checkinDate=2024-02-20&checkoutDate=2024-02-21&childrenAges=&searchPagePollingId=781e5054a51f650cbc0567fa0b2d917-3-newsearch&seed=portal-hotels-search"
+                                class="carousel_hotel_descr_link"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHotel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
         </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Предыдущий</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselHotel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Следующий</span>
-        </button>
-    </div>
 
     </div>
 
     <!-- Slider 3  -->
-        
+
     <div id="carouselRestaurant" class="carousel slide">
         <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="d-block w-100 carousel_img_restst"></div>
-            <div class="carousel_rest">
-                <div class="container">
-                    <div class="carousel_hotel_question col-md-6 offset-md-3">Приятного Аппетита!</div>
-                    <div class="carousel_hotel_descr col-md-4 offset-md-1">
-                        <div class="carousel_rest_descr_text">Ресторан "Мясо Мясо"</div>
-                        <div class="carousel_rest_descr_price">Средний чек:<br>1,7-3 тыс ₽</div>
-                        <img src="icons/kirovsky/Rating.svg" class="carousel_rest_descr_rating"></img>
-                        <a href="#" class="carousel_rest_descr_link"></a>
+            <div class="carousel-item active">
+                <div class="d-block w-100 carousel_img_restst"></div>
+                <div class="carousel_rest">
+                    <div class="container">
+                        <div class="carousel_hotel_question col-md-6 offset-md-3">Приятного Аппетита!</div>
+                        <div class="carousel_hotel_descr col-md-4 offset-md-1">
+                            <div class="carousel_rest_descr_text">Ресторан "Мясо Мясо"</div>
+                            <div class="carousel_rest_descr_price">Средний чек:<br>1,7-3 тыс ₽</div>
+                            <img src="icons/kirovsky/Rating.svg" class="carousel_rest_descr_rating"></img>
+                            <a href="https://2gis.ru/ufa/firm/70000001022675517" class="carousel_rest_descr_link"></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-block w-100 carousel_img_restnd"></div>
-            <div class="carousel_rest">
-                <div class="container">
-                    <div class="carousel_hotel_descr col-md-4 offset-md-1">
-                        <div class="carousel_rest_descr_text">Ресторан "Дуслык"</div>
-                        <div class="carousel_rest_descr_price">Средний чек:<br>0,5-1,5 тыс ₽</div>
-                        <img src="icons/kirovsky/Rating.svg" class="carousel_rest_descr_rating"></img>
-                        <a href="#" class="carousel_rest_descr_link"></a>
+            <div class="carousel-item">
+                <div class="d-block w-100 carousel_img_restnd"></div>
+                <div class="carousel_rest">
+                    <div class="container">
+                        <div class="carousel_hotel_descr col-md-4 offset-md-1">
+                            <div class="carousel_rest_descr_text">Ресторан "Дуслык"</div>
+                            <div class="carousel_rest_descr_price">Средний чек:<br>0,5-1,5 тыс ₽</div>
+                            <img src="icons/kirovsky/Rating.svg" class="carousel_rest_descr_rating"></img>
+                            <a href="https://2gis.ru/ufa/firm/70000001006427427?m=55.949644%2C54.72752%2F18.27"
+                                class="carousel_rest_descr_link"></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-        <div class="d-block w-100 carousel_img_restrd"></div>
-        <div class="carousel_rest">
-            <div class="container">
-                <div class="carousel_hotel_descr col-md-4 offset-md-1">
-                    <div class="carousel_rest_descr_text">Ресторан "Шерлок Холмс"</div>
-                    <div class="carousel_rest_descr_price">Средний чек:<br>1,7-3 тыс ₽</div>
-                    <img src="icons/kirovsky/Rating.svg" class="carousel_rest_descr_rating"></img>
-                    <a href="#" class="carousel_rest_descr_link"></a>
+            <div class="carousel-item">
+                <div class="d-block w-100 carousel_img_restrd"></div>
+                <div class="carousel_rest">
+                    <div class="container">
+                        <div class="carousel_hotel_descr col-md-4 offset-md-1">
+                            <div class="carousel_rest_descr_text">Ресторан "Шерлок Холмс"</div>
+                            <div class="carousel_rest_descr_price">Средний чек:<br>1,7-3 тыс ₽</div>
+                            <img src="icons/kirovsky/Rating.svg" class="carousel_rest_descr_rating"></img>
+                            <a href="https://2gis.ru/ufa/firm/2393065583111594" class="carousel_rest_descr_link"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurant"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurant"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurant" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Предыдущий</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurant" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Следующий</span>
-    </button>
-    </div>
-    </div>
-    
+
     <footer>
         <div class="container">
             <div class="row">
@@ -308,14 +359,15 @@
             </div>
         </div>
     </footer>
-    
+
 
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="/js/kirov.js"></script>
 </body>
+
 </html>
