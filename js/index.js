@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
           body = document.querySelector('body'),
           vw = window.innerWidth / 100,
           vh = window.innerHeight / 100,
+          clientWidth = document.documentElement.clientWidth,
     // Константы регистрации
           registr = document.querySelector('.registration'),
           openReg = document.getElementsByName("openReg"),
@@ -38,8 +39,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
           formForEmail = document.getElementById('formForEmail'),
           regWithPhone = document.querySelector('.registration_window_question_withPhone'),
           withPhoneWrapper = document.querySelector('.registration_window_phone_wrapper'),
-          formForPhone = document.getElementById('formForPhone');
-
+          formForPhone = document.getElementById('formForPhone'),
+    // Константы под мобильные устройства 
+            appeal = document.querySelector('.appeal'),
+            appealText = document.querySelector('.appeal_text');
 
 
 
@@ -57,26 +60,69 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     openReg.forEach(el => {
         el.style.cursor = "pointer"
+
         el.addEventListener('click', (e) => {
-            body.style.overflow = 'hidden'
-            registr.style.top = `${window.scrollY}px`
-            registr.classList.remove('hide')
-            // registr.classList.add('show')
-            setTimeout(() => {
-                regBg.style.opacity = 1
-            }, 1);
-            regBg.addEventListener('click', (ev) => {
-                registr.style.opacity = 0
-                regBg.style.opacity = 0
+            if (clientWidth >= 768) {            
+                body.style.overflow = 'hidden'
+                registr.style.top = `${window.scrollY}px`
+                registr.classList.remove('hide')
+                // registr.classList.add('show')
                 setTimeout(() => {
-                    // registr.classList.remove('show')
-                    registr.classList.add('hide')
-                    body.style.overflow = 'visible'
+                    regBg.style.opacity = 1
+                }, 1);
+                regBg.addEventListener('click', (ev) => {
+                    registr.style.opacity = 0
+                    regBg.style.opacity = 0
                     setTimeout(() => {
-                        registr.style.opacity = 1
-                    }, 100);
-                }, 1000);
-            })
+                        // registr.classList.remove('show')
+                        registr.classList.add('hide')
+                        body.style.overflow = 'visible'
+                        setTimeout(() => {
+                            registr.style.opacity = 1
+                        }, 100);
+                    }, 1000);
+                })
+            } else {
+                body.style.overflow = 'hidden'
+                appeal.style.top = `${window.scrollY}px`
+                appeal.classList.remove('hide')
+                appeal.classList.add('show')
+                appealText.style.opacity = 0
+                appeal.style.opacity = 0
+                appeal.style.transition = '1s all'
+                appealText.style.transition = '1s all'
+                setTimeout(() => {
+                    appeal.style.opacity = 1
+                }, 1);
+                setTimeout(() => {
+                    appealText.style.opacity = 1
+                },1000);
+
+                const close = () => {
+                    appealText.style.opacity = 0
+                    setTimeout(() => {
+                        appeal.style.opacity = 0
+                        setTimeout(() => {                            
+                            appeal.classList.remove('show')
+                            appeal.classList.add('hide')
+                            body.style.overflow = 'visible'
+                        }, 500);
+                    }, 1000);
+                }
+
+                
+                const timer = setTimeout(() => close(), 5000);
+
+
+                appeal.addEventListener('click', (eve) => {
+                    if (eve.target.className !== 'appeal_text') {
+                        close()
+                        clearTimeout(timer)
+                    }
+                })
+
+
+            }
         })
     });
 
@@ -162,14 +208,18 @@ document.addEventListener('DOMContentLoaded', (e) => {
         body.style.overflow = "hidden"
         menuModal.style.left = `${0}px`
         menuBg.style.opacity = 0.568
+        console.log(screen.orientation)
 
         menuCloses.forEach(close => {
             close.addEventListener('click', (ev) => {
-                menuModal.style.left = `${-37}vw`
+                if (clientWidth >= 767) {
+                    menuModal.style.left = `${-37}vw`
+                } else {
+                    menuModal.style.left = `${-80}vw`
+                }
                 logo.style.opacity = 1
                 menuBg.style.opacity = 0
                 setTimeout(() => {            
-                      
                     body.style.overflow = "visible"
                     menu.classList.remove('show')
                     menu.classList.add('hide')
@@ -206,6 +256,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
     modalBg.style.opacity = 0
 
     districts.forEach(distr => {
+        if (clientWidth <= 767) {
+            distr.style.scale = 0.6
+            // distr.style.display = 'none'
+        } 
         distr.addEventListener('click', (e) => {
             modalBg.classList.remove('hide')
             modalBg.classList.add('show')
@@ -214,11 +268,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
             nowDist = e.target
             nowDist.style.zIndex = "999"
             distr.style.transition = '1.5s all'
-            distr.style.scale = 1.4;
-            modal.style.left = `${e.target.x - e.target.naturalWidth - 200}px`
-            modal.style.top = `${e.target.y - e.target.naturalHeight - 30}px`
+            // distr.style.scale = 1.4;
+            clientWidth <= 767? distr.style.scale = 0.9 : distr.style.scale = 1.4
             modalText.textContent = `${e.target.dataset.parent}`
-
+            
+            if (clientWidth > 767) {
+                modal.style.left = `${e.target.x - e.target.naturalWidth - 200}px`
+                modal.style.top = `${e.target.y - e.target.naturalHeight - 30}px`
+            } 
+            
             window.scrollTo({
                 top: e.target.offsetTop - 100,
                 left: 0,
@@ -231,9 +289,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
             modalBg.style.opacity = 0.568
             modalBg.style.height = `${body.scrollHeight}px`
 
-
-
-            console.dir(e.target)
 
             if (`${e.target.dataset.parent}` === 'Центр (Кировский Район)') {
                 let button = document.createElement("a");
@@ -261,7 +316,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     });
                     modal.classList.remove('show')
                     modal.classList.add('hide')
-                    distr.style.scale = 1
+                    clientWidth <= 767? distr.style.scale = 0.6 : distr.style.scale = 1
                     nowDist.style.zIndex = "1"
                     
                     modalBg.style.opacity = 0

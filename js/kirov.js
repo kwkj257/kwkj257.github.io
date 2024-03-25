@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
           body = document.querySelector('body'),
           vw = window.innerWidth / 100,
           vh = window.innerHeight / 100,
+          clientWidth = document.documentElement.clientWidth,
+          clientHeight = document.documentElement.clientHeight,
     // Константы интерактива отелей
           hotel = document.querySelectorAll('.carousel_hotel_descr'),
           yaHotel = document.querySelectorAll('.carousel_hotel_descr'),
@@ -35,42 +37,59 @@ document.addEventListener('DOMContentLoaded', (e) => {
           formForEmail = document.getElementById('formForEmail'),
           regWithPhone = document.querySelector('.registration_window_question_withPhone'),
           withPhoneWrapper = document.querySelector('.registration_window_phone_wrapper'),
-          formForPhone = document.getElementById('formForPhone');
+          formForPhone = document.getElementById('formForPhone'),
+    // Константы под мобильные устройства 
+          appeal = document.querySelector('.appeal'),
+          appealText = document.querySelector('.appeal_text'),
+          underfooter = document.querySelector('.underfooter');
 
 
+
+
+        // console.log(clientHeight)
+        if (clientHeight >= 898) {
+            underfooter.classList.remove('hide')
+            underfooter.classList.add('show')
+        }
         // Меню
 
           menuBg.style.opacity = 0
           menuSorry.classList.add('hide')
       
           hamburger.addEventListener('click', (e) => {
-              window.scrollTo({
-                  top: 0,
-                  left: 0,
-                  behavior: 'smooth'
-              });
-              menu.classList.remove('hide')
-              menu.classList.add('show')
-              const stand = +left.left.replace(/[a-z]+/gi, ''),
-                    logot = +logoty.opacity;
-              logo.style.opacity = 0  
-              body.style.overflow = "hidden"
-              menuModal.style.left = `${0}px`
-              menuBg.style.opacity = 0.568
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            menu.classList.remove('hide')
+            menu.classList.add('show')
+            const stand = +left.left.replace(/[a-z]+/gi, ''),
+                  logot = +logoty.opacity;
+            logo.style.opacity = 0  
+            body.style.overflow = "hidden"
+            menuModal.style.left = `${0}px`
+            menuBg.style.opacity = 0.568
       
-              menuCloses.forEach(close => {
-                  close.addEventListener('click', (ev) => {
-                      menuModal.style.left = `${-37}vw`
-                      logo.style.opacity = 1
-                      menuBg.style.opacity = 0
-                      setTimeout(() => {            
-                            
-                          body.style.overflow = "visible"
-                          menu.classList.remove('show')
-                          menu.classList.add('hide')
-                      }, 1300);
-                  })
-              });
+            menuCloses.forEach(close => {
+                close.addEventListener('click', (ev) => {
+                    if (document.documentElement.clientWidth >= 767) {
+                        menuModal.style.left = `${-37}vw`
+                    } else {
+                        menuModal.style.left = `${-80}vw`
+                    }
+                    logo.style.opacity = 1
+                    menuBg.style.opacity = 0
+                    setTimeout(() => {            
+                        if (ev.target.className == 'menu_modal_logo') {
+                            window.location.href = 'index.html';
+                        }    
+                        body.style.overflow = "visible"
+                        menu.classList.remove('show')
+                        menu.classList.add('hide')
+                    }, 1300);
+                })
+            });
       
               const menuty = +menuLangty.opacity;
       
@@ -78,21 +97,21 @@ document.addEventListener('DOMContentLoaded', (e) => {
       
       
       
-              menuLangChange.forEach(el => {
-                  el.addEventListener('click', (e) => {
-                      menuSorry.classList.remove('hide')
-                      menuSorry.classList.add('show')
-                      setTimeout(() => {
-                          menuSorry.style.transition = '1s all'
-                          menuSorry.style.opacity = 1
-                      }, 100);
-                      menuLang.style.opacity = 0
-                      setTimeout(() => {
-                          menuLangChange.forEach(elem => elem.remove())
-                      }, 1000); 
-                  })
-              });
-          })
+            menuLangChange.forEach(el => {
+                el.addEventListener('click', (e) => {
+                    menuSorry.classList.remove('hide')
+                    menuSorry.classList.add('show')
+                    setTimeout(() => {
+                        menuSorry.style.transition = '1s all'
+                        menuSorry.style.opacity = 1
+                    }, 100);
+                    menuLang.style.opacity = 0
+                    setTimeout(() => {
+                        menuLangChange.forEach(elem => elem.remove())
+                    }, 1000); 
+                })
+            });
+        })
           
       
     // Регистрация
@@ -110,25 +129,67 @@ document.addEventListener('DOMContentLoaded', (e) => {
     openReg.forEach(el => {
         el.style.cursor = "pointer"
         el.addEventListener('click', (e) => {
-            body.style.overflow = 'hidden'
-            registr.style.top = `${window.scrollY}px`
-            registr.classList.remove('hide')
-            // registr.classList.add('show')
-            setTimeout(() => {
-                regBg.style.opacity = 1
-            }, 1);
-            regBg.addEventListener('click', (ev) => {
-                registr.style.opacity = 0
-                regBg.style.opacity = 0
+            if (clientWidth >= 768) {
+                body.style.overflow = 'hidden'
+                registr.style.top = `${window.scrollY}px`
+                registr.classList.remove('hide')
+                // registr.classList.add('show')
                 setTimeout(() => {
-                    // registr.classList.remove('show')
-                    registr.classList.add('hide')
-                    body.style.overflow = 'visible'
+                    regBg.style.opacity = 1
+                }, 1);
+                regBg.addEventListener('click', (ev) => {
+                    registr.style.opacity = 0
+                    regBg.style.opacity = 0
                     setTimeout(() => {
-                        registr.style.opacity = 1
-                    }, 100);
-                }, 1000);
-            })
+                        // registr.classList.remove('show')
+                        registr.classList.add('hide')
+                        body.style.overflow = 'visible'
+                        setTimeout(() => {
+                            registr.style.opacity = 1
+                        }, 100);
+                    }, 1000);
+                })
+            } else {
+                body.style.overflow = 'hidden'
+                appeal.style.top = `${window.scrollY}px`
+                appeal.classList.remove('hide')
+                appeal.classList.add('show')
+                appealText.style.opacity = 0
+                appeal.style.opacity = 0
+                appeal.style.transition = '1s all'
+                appealText.style.transition = '1s all'
+                setTimeout(() => {
+                    appeal.style.opacity = 1
+                }, 1);
+                setTimeout(() => {
+                    appealText.style.opacity = 1
+                },1000);
+    
+                const close = () => {
+                    appealText.style.opacity = 0
+                    setTimeout(() => {
+                        appeal.style.opacity = 0
+                        setTimeout(() => {                            
+                            appeal.classList.remove('show')
+                            appeal.classList.add('hide')
+                            body.style.overflow = 'visible'
+                        }, 500);
+                    }, 1000);
+                }
+    
+                
+                const timer = setTimeout(() => close(), 5000);
+    
+    
+                appeal.addEventListener('click', (eve) => {
+                    if (eve.target.className !== 'appeal_text') {
+                        close()
+                        clearTimeout(timer)
+                    }
+                })
+    
+    
+            }
         })
     });
 

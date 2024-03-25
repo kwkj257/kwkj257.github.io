@@ -1,0 +1,320 @@
+@media (max-width: 767px) 
+    nav
+        height: 74px
+
+    .heading
+        padding: 16px
+        color: #144A43
+        text-align: center
+        font-family: 'Montserrat Alternates'
+        font-size: 100%
+        font-weight: 500
+        &_kirov 
+            padding-top: 18px
+            color: #603333
+            text-align: center
+            font-family: 'Montserrat'
+            font-size: 15px
+            font-weight: 500
+
+    .hamburger_box
+        margin: 21px auto
+        scale: 0.8
+
+    .menu
+        &_bg
+            position: absolute
+            transition: 1s all
+            height: 100vh
+            width: 100vw
+            background-color: rgba(0, 0, 0)
+            z-index: 998
+        &_modal
+            position: absolute
+            z-index: 9999
+            height: 100vh
+            width: 80vw
+            background-color: #DCF7FF
+            z-index: 998
+            left: -80vw
+            transition: 1s all
+            &_kirov
+                background-color: #f0fcff
+            // &_logo
+            //     cursor: pointer
+            //     margin: 15px auto
+            //     border-radius: 29px
+            //     display: block
+            //     z-index: 999
+            //     height: 117px
+            //     width: 224px
+            //     background: #b4b4b4 url('../icons/menu/Logo-3.svg') center center/cover no-repeat 
+            //     box-shadow: 7px 6px 5px #0000005a
+            &_profile
+                height: 98px
+                width: 280px
+                position: relative
+                display: block
+                margin: 20% auto
+                background-color: #FFFFFF
+                border-radius: 18px
+                &_img
+                    height: 60px
+                    margin: 20px 25px
+                &_text
+                    position: absolute
+                    width: 200px
+                    font-family: 'Montserrat'
+                    font-size: 25px
+                    font-weight: 300
+                    top: 29px
+                    left: 110px
+            &_sorry
+                // position: absolute
+                top: 54%
+                // left:50%
+                // transform: translate(-50%, -50%)
+                // color: #000000
+                // text-align: center
+                // font-family: 'Montserrat'
+                font-size: 17px
+                // font-weight: 300
+                // transition: 1s all
+            //     opacity: 0
+            // &_lang
+            //     padding: 42px 0 0 0
+            //     margin: 0 auto
+            //     display: flex
+            //     justify-content: space-between
+            //     height: 43px
+            //     width: 170px
+            //     transition: 1s all
+            //     &_ru
+            //         height: 43px
+            //         width: 66px
+            //         background: #b4b4b4 url('../icons/menu/Flag_of_Russia 1.svg') center center/cover no-repeat 
+            //         border-radius: 4px
+            //         cursor: pointer
+            //     &_divider
+            //         height: 43px
+            //         width: 2px
+            //         background-color: #000000
+            //     &_eng
+            //         height: 43px
+            //         width: 66px
+            //         background: #b4b4b4 url('../icons/menu/flag-angliyskih-korolevskih-vms-i-neofitsialnyy-flag-anglii-i-shotlandii-nahodivshihsya-v-lichnoy-unii-1606-1649-foto 1.svg') center center/cover no-repeat 
+            //         border-radius: 4px
+            //         cursor: pointer
+    .individual
+        &_modal_menu
+            margin: 26vh auto
+            width: 280px
+            height: 158px
+
+    .district
+        position: relative
+        top: 0px
+        height: 110%
+        width: 100%
+        background: #b4b4b4 url('../img/main/841f0b5034211a884a553864b77f79e4 1.jpg') center center/cover no-repeat 
+        z-index: 2
+        &_bg
+            top: 0px
+            left: 0
+            position: absolute
+            width: 100vw
+            background-color: rgba(0, 0, 0)
+            z-index: 10
+        &_border
+            padding-top: 200px
+            padding-bottom: 200px
+            position: relative
+            margin: 0 auto
+            width: 100%
+            height: 200px
+            background: rgba(255, 255, 255, 0.85)
+            border-radius: 50px
+            &_center
+                cursor: pointer
+                transition: 1.5s all
+                position: absolute
+                top: 46.6%
+                left: 5.9%
+                z-index: 2
+            &_soviet
+                cursor: pointer
+                position: absolute
+                top: 15%
+                left: 20%
+            &_park
+                cursor: pointer
+                position:  absolute
+                top: 47%
+                left: 39.5%
+            &_somethingChernuaga
+                cursor: pointer
+                position: absolute
+                top: 23%
+                left: 41%
+            &_zelenaya
+                cursor: pointer
+                position: absolute
+                top: 50%
+                left: 22% 
+            &_sipailovo
+                cursor: pointer
+                position: absolute
+                top: 32%
+                left: 47%
+            &_inors
+                cursor: pointer
+                position: absolute
+                top: 28.4%
+                left: 63%
+            &_chernikovka
+                cursor: pointer
+                position: absolute
+                top: 10.7%
+                left: 45.3%
+            &+:hover
+                cursor: pointer
+                scale: 1.4
+            &_nizhegorodka
+                cursor: pointer
+                position: absolute
+                top: 48.2%
+                left: 5.4%
+            &_shaksha
+                display: none
+            &_dema
+                display: none
+            &_zaton
+                display: none
+            &_modal
+                left:50%
+                transform: translate(-50%, -50%)
+
+    .guide
+        // height: 2500px
+        padding-bottom: 100px
+        &_title
+            font-size: 20px
+            font-weight: 300
+        &_border
+            transform: translateY(0px)
+            height: 350px
+            &_descr
+                padding: 20px
+                color: #000
+                text-align: center
+                font-family: 'Montserrat'
+                font-size: 15px
+                font-weight: 300
+            &_img
+                display: block
+                scale: 0.8
+                left:50%
+                margin: 10px -4.1%
+
+    
+
+    #small_imgs
+        margin: -50px -4.1%
+        scale: 0.9
+
+    .btn
+        &_footer
+            width: 100%
+            height: 45%
+            border-radius: 11px
+            background: #D9D9D9
+            border: none
+            outline: none
+            color: #181818
+            text-align: center
+            font-family: 'Montserrat'
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: normal
+
+    .descr
+        &_footer
+            padding: 7px 0 0 0
+            color: #FFF
+            text-align: center
+            font-family: 'Montserrat'
+            font-size: 12px
+            font-weight: 400
+
+
+
+
+    .back
+        top: 1%
+        left: 2%
+        font-size: 25px
+        outline: 0.1px solid
+        height: 60px
+        width: 160px
+
+    #info_1
+        padding: 40% 0 0 0
+    #info_2
+        padding: 40% 0 0 0
+    #info_3
+        padding: 40% 0 0 0
+
+    .subheader
+        position: relative
+        height: 800px
+        background: #b4b4b4 url('../img/kirovsky/Nesterov.jpeg') center center/cover no-repeat
+        padding: 240px 0 0 0
+        z-index: 98
+        &_title
+            color: #000C12
+            text-align: center
+            font-family: 'Montserrat'
+            font-size: 15px
+            font-weight: 400
+            height: 400px
+            border-radius: 39px
+            background: rgba(255, 255, 255, 0.75)
+            padding: 93px 0 0 0
+            &_link
+                color: #000C12
+                font-family: 'Montserrat'
+                font-size: 15px
+                font-weight: 400
+                text-decoration-line: underline
+
+    .carousel
+        display: none
+
+    .underfooter
+        height: 300px
+        background-color: #141414
+
+    .appeal
+        position: absolute
+        transition: 1s all
+        height: 100vh
+        width: 100%
+        background-color: rgba(0, 0, 0,0.2)
+        z-index: 998
+        &_text
+            position: absolute
+            height: 300px
+            width: 85%
+            color: #000000
+            text-align: center
+            font-family: 'Montserrat'
+            font-weight: 300
+            background: #e6faff
+            z-index: 999999
+            font-size: 15px
+            padding-top: 34px
+            border-radius: 30px
+            left:50%
+            transform: translate(-50%, 50%)
+            border: 0.1px solid #515151

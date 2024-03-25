@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         tex.style.transition = '1s all'
     })
     
-    back.style.fontSize = `${0}px`
+    back.style.scale = 0
 
     function scaling() {
         let waiting = setTimeout(() => {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 scaling()
             } else {
                 setTimeout(() => {
-                    back.style.fontSize = `${22}px`
+                    back.style.scale = 1
                 }, 1500);
             }
         }, time);
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     back.addEventListener('click', () => {
         text.forEach((tex) => {
             tex.style.scale = 0.001
-            back.style.fontSize = `${0}px`
+            back.style.scale = 0
         })
         setTimeout(() => {
             window.location.href = 'index.html';

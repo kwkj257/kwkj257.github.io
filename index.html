@@ -17,20 +17,22 @@
     <nav>
         <div class="container">
             <div class="row">
-                <div class="hamburger col-md-2">
+                <div class="hamburger col-3 col-md-2">    
                     <div class="hamburger_box">
                         <div class="hamburger_box_line"></div>
                         <div class="hamburger_box_line"></div>
                         <div class="hamburger_box_line"></div>
                     </div>
                 </div>
-                <h1 class="heading col-md-8">Пожалуйста выберите район</h1>
-                <a href="index.html" class="col-md-2"><img src="icons/logos/Frame 1-2.svg" alt="logo" class="logo logo_title"></a>
+                <h1 class="heading col-6 col-md-8">Пожалуйста выберите район</h1>
+                <a href="index.html" class="col-3 col-md-2">
+                    <img src="icons/logos/Frame 1-2.svg" alt="logo" class="logo logo_title">
+                </a>
             </div>
         </div>
     </nav>
 
-
+    
     <div class="menu hide">
         <div class="menu_bg" id="closeMenu"></div>
         <div class="menu_modal">
@@ -53,7 +55,11 @@
         </div>
     </div>
 
-
+    <div class="appeal hide">
+        <div class="appeal_text">
+            К сожалению возможность зайти в профиль,<br>как и некоторые другие<br>реализуются только на десктопных версиях сайта<br><br>Чтобы воспользоваться всеми возможностями зайдите с компьютера<br>(С уважением Tourist Guide)
+        </div>
+    </div>
 
     <div class="registration hide">
         <div class="registration_bg"></div>
@@ -117,7 +123,7 @@
     <section class="district">
         <div class="district_bg hide" id="closeModal"></div>
         <div class="container">
-            <div class="district_border col-md-12">
+            <div class="district_border col-12 col-md-12">
                 <img src="icons/rayoni/Center.svg" class="district_border_center distr" data-parent="Центр (Кировский Район)"></img>
                 <img src="icons/rayoni/Chernikovka.svg" class="district_border_chernikovka distr" data-parent="Черниковка"></img>
                 <img src="icons/rayoni/Dema.svg" class="district_border_dema distr" data-parent="Дема"></img>
@@ -142,24 +148,24 @@
         <div class="container text-center">
             <div class="guide_title">Как пользоваться сайтом?</div>
             <div class="row">
-            <div class="guide_border col-md-5">
+            <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4 gy-md-0">
                     <div class="guide_border_descr">1. Выберите нужный район<br>и кликните на него</div>
-                    <img src="img/main/guide/Rayoni.svg" alt="123" class="guide_border_img">
+                    <img src="img/main/guide/Rayoni.svg" alt="123" class="guide_border_img" >
                 </div>
 
-                <div class="guide_border col-md-5 ms-md-auto">
+                <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4 gy-md-0 ms-md-auto">
                     <div class="guide_border_descr">2. Подтвердите свой выбор, нажав на кнопку “Перейти”</div>
                     <img src="img/main/guide/Group 10.svg" alt="123" class="guide_border_img">
                 </div>
 
-                <div class="guide_border col-md-5 gy-4">
-                    <div class="guide_border_descr" style="padding: 50px">3.  Получите подробную<br>информацию о районе</div>
-                    <img src="img/main/guide/Kirovsky Rajonn.svg" alt="123" class="guide_border_img">
+                <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4">
+                    <div class="guide_border_descr" style="padding-top: 50px; padding-bottom: 50px">3.  Получите подробную<br>информацию о районе</div>
+                    <img src="img/main/guide/Kirovsky Rajonn.svg" alt="123" class="guide_border_img" id="small_imgs">
                 </div>
 
-                <div class="guide_border col-md-5 gy-4 ms-md-auto">
+                <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4 ms-md-auto">
                     <div class="guide_border_descr">Также вы можете зарегистрироваться и, зайдя в профиль, голосовать за добавление достопримечательности/отеля/ресторана</div>
-                    <img src="img/main/guide/Group 13.svg" alt="123" class="guide_border_img" name="openReg">
+                    <img src="img/main/guide/Group 13.svg" alt="123" class="guide_border_img" id="small_imgs" name="openReg">
                 </div>
             </div>
         </div>
@@ -168,8 +174,8 @@
     <footer>
         <div class="container">
             <div class="row">
-                <img src="icons/logos/Small logo.svg" class="logo logo_footer col-md-2"></img>
-                <div class="individual col-md-2 offset-md-8">
+                <img src="icons/logos/Small logo.svg" class="logo logo_footer col-6 col-md-2"></img>
+                <div class="individual col-5 offset-1 col-md-2 offset-md-8">
                     <div class="descr descr_footer">Индивидуальный проект</div>
                     <div class="divider"></div>
                     <a href="info.html"><button class="btn btn_footer">Подробнее</button></a>

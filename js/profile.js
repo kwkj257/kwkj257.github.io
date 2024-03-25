@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const username = document.querySelector('.navigation_profile_name')
 
-    username.textContent = data
+    try {
+        username.textContent = data
+    } catch (error) {}
 
     console.log(data)
 })

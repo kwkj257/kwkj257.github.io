@@ -46,6 +46,7 @@ nav
             width: 340px
             background-color: #FFFFFF
             border-radius: 18px
+            scale: 1
             &_img
                 height: 80px
                 margin: 14px 14px
@@ -430,7 +431,8 @@ input[name="entryNewNameInput"]
     
 
 .district
-    padding: 120px
+    padding-top: 120px
+    padding-bottom: 120px
     position: relative
     top: 0px
     height: 110%
@@ -581,7 +583,7 @@ input[name="entryNewNameInput"]
 .guide
     padding: 12px 0 0 0
     background: #b4b4b4 url('../img/main/yybvbv2v5i4ahg0vg2fuyyttdjh30h0c 1.jpg') center center/cover no-repeat
-    height: 1300px
+    min-height: 1300px
     display: flex
     &_title
         color: #124C5E
@@ -643,6 +645,11 @@ footer
         font-style: normal
         font-weight: 400
         line-height: normal
+        transition: 0.4s all
+        &:hover
+            background: 0
+            border: 1px solid #D9D9D9
+            color: #D9D9D9
 
 .divider
     width: 100%
@@ -750,7 +757,7 @@ header
                 font-weight: 400
         &_link
             width: 100px
-            height: 120px
+            height: 100px
             position: absolute
             display: block
             margin: 60px auto
@@ -996,3 +1003,4 @@ header
         position: absolute
         bottom: 0
         left: 0
+
