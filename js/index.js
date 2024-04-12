@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     let langMode = 'rus'
     
     if (localStorage.getItem('language', langMode) === 'eng') {
-        console.log('ДА СУКА, КАКОГО ХУЯ ТЫ НЕ МЕНЯЕШЬСЯ ЯЗЫК ЕБНЫЙ')
         langMode = localStorage.getItem('language', langMode)
     } else {
         localStorage.setItem('language', langMode)
