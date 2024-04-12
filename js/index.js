@@ -55,16 +55,17 @@ document.addEventListener('DOMContentLoaded', (e) => {
   
   
     let langMode = 'rus'
-  
-    try {
+    
+    if (localStorage.getItem('language', langMode) == 'eng') {
         langMode = localStorage.getItem('language', langMode)
-        console.log(langMode)
-    } catch {}
+    } else {
+        localStorage.setItem('language', langMode)
+    }
+
   
 
 
 
-    localStorage.setItem('language', langMode)
     
     if (langMode === 'rus') {
         moreRus.style.display = 'block'
