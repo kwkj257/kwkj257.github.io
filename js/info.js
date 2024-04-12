@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
     back.forEach(el => {
         el.style.scale = 0
     });
+    
+    back.forEach(el => {
+        el.style.transition = '1s all'
+    });
 
 
 
@@ -80,13 +84,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
 
 
-    console.log(window.innerHeight)
     setTimeout(() => {
         window.scrollTo({
             top: window.innerHeight,
             behavior: 'smooth'
         });
-        console.log(1)
     }, 4000);
 
     

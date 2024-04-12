@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   
     try {
         langMode = localStorage.getItem('language', langMode)
+        console.log(langMode)
     } catch {}
   
 
@@ -66,10 +67,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
     localStorage.setItem('language', langMode)
     
     if (langMode === 'rus') {
+        moreRus.style.display = 'block'
+        moreEng.style.display = 'none'
         engText.forEach(elem => {
             elem.classList.add('hide')
         }) 
     } else {
+        moreRus.style.display = 'none'
+        moreEng.style.display = 'block'
         rusText.forEach(elem => {
             elem.classList.add('hide')
         })
