@@ -49,14 +49,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
   
     let langMode = 'rus'
   
-    try {
-        langMode = localStorage.getItem('language', langMode)
-    } catch {}
+    langMode = localStorage.getItem('language', langMode)
+    // try {
+    // } catch {}
   
 
 
 
-    localStorage.setItem('language', langMode)
+    // localStorage.setItem('language', langMode)
     
     if (langMode == 'rus') {
         engText.forEach(elem => {
