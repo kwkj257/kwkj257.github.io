@@ -8,36 +8,31 @@ document.addEventListener('DOMContentLoaded', (e) => {
           menuBg = document.querySelector('.menu_bg'),
           menuModal = document.querySelector('.menu_modal'),
           logo = document.querySelector('.logo'),
-          menuSorry = document.querySelector('.menu_modal_sorry'),
-          menuLang = document.querySelector('.menu_modal_lang'),
-          menuLangChange = document.querySelectorAll('#sorry'),
-          menuLangty = window.getComputedStyle(menuSorry),
-          left = window.getComputedStyle(menuModal),
-          logoty = window.getComputedStyle(logo),
+          moreRus = document.querySelector('#modal_rus'),
+          moreEng = document.querySelector('#modal_eng'),
+          menuLangRu = document.querySelector('.menu_modal_lang_ru'),
+          menuLangEng = document.querySelector('.menu_modal_lang_eng'),
           menuCloses = document.querySelectorAll('#closeMenu'),
     // Общие константы
           body = document.querySelector('body'),
-          vw = window.innerWidth / 100,
-          vh = window.innerHeight / 100,
           clientWidth = document.documentElement.clientWidth,
           clientHeight = document.documentElement.clientHeight,
-    // Константы интерактива отелей
-          hotel = document.querySelectorAll('.carousel_hotel_descr'),
-          yaHotel = document.querySelectorAll('.carousel_hotel_descr'),
+          rusText = document.querySelectorAll('.rus'),
+          engText = document.querySelectorAll('.eng'),
     // Константы регистрации
           registr = document.querySelector('.registration'),
           openReg = document.getElementsByName("openReg"),
           regBg = document.querySelector('.registration_bg'),
           entryWrapper = document.querySelector('.registration_window_entry'),
-          formElement = document.getElementById('form'),
-          regBtn = document.querySelector('.registration_window_entry_regist'),
+          regBtn = document.querySelectorAll('.registration_window_entry_regist'),
           questionWrapper = document.querySelector('.registration_window_question'),
           regWithEmail = document.querySelector('.registration_window_question_withEmail'),
-          withEmailWrapper = document.querySelector('.registration_window_email_wrapper'),
-          formForEmail = document.getElementById('formForEmail'),
           regWithPhone = document.querySelector('.registration_window_question_withPhone'),
+          withEmailWrapper = document.querySelector('.registration_window_email_wrapper'),
           withPhoneWrapper = document.querySelector('.registration_window_phone_wrapper'),
+          formForEmail = document.getElementById('formForEmail'),
           formForPhone = document.getElementById('formForPhone'),
+          formElement = document.getElementById('form'),
     // Константы под мобильные устройства 
           appeal = document.querySelector('.appeal'),
           appealText = document.querySelector('.appeal_text'),
@@ -46,82 +41,167 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-        // console.log(clientHeight)
-        if (clientHeight >= 898) {
-            underfooter.classList.remove('hide')
-            underfooter.classList.add('show')
-        }
-        // Меню
 
-          menuBg.style.opacity = 0
-          menuSorry.classList.add('hide')
-      
-          hamburger.addEventListener('click', (e) => {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-            menu.classList.remove('hide')
-            menu.classList.add('show')
-            const stand = +left.left.replace(/[a-z]+/gi, ''),
-                  logot = +logoty.opacity;
-            logo.style.opacity = 0  
-            body.style.overflow = "hidden"
-            menuModal.style.left = `${0}px`
-            menuBg.style.opacity = 0.568
-      
-            menuCloses.forEach(close => {
-                close.addEventListener('click', (ev) => {
-                    if (document.documentElement.clientWidth >= 767) {
-                        menuModal.style.left = `${-37}vw`
-                    } else {
-                        menuModal.style.left = `${-80}vw`
-                    }
-                    logo.style.opacity = 1
-                    menuBg.style.opacity = 0
-                    setTimeout(() => {            
-                        if (ev.target.className == 'menu_modal_logo') {
-                            window.location.href = 'index.html';
-                        }    
-                        body.style.overflow = "visible"
-                        menu.classList.remove('show')
-                        menu.classList.add('hide')
-                    }, 1300);
-                })
-            });
-      
-              const menuty = +menuLangty.opacity;
-      
-      
-      
-      
-      
-            menuLangChange.forEach(el => {
-                el.addEventListener('click', (e) => {
-                    menuSorry.classList.remove('hide')
-                    menuSorry.classList.add('show')
-                    setTimeout(() => {
-                        menuSorry.style.transition = '1s all'
-                        menuSorry.style.opacity = 1
-                    }, 100);
-                    menuLang.style.opacity = 0
-                    setTimeout(() => {
-                        menuLangChange.forEach(elem => elem.remove())
-                    }, 1000); 
-                })
-            });
+     // Языки 
+
+
+  
+  
+    let langMode = 'rus'
+  
+    try {
+        langMode = localStorage.getItem('language', langMode)
+    } catch {}
+  
+
+
+
+    localStorage.setItem('language', langMode)
+    
+    if (langMode == 'rus') {
+        engText.forEach(elem => {
+            elem.classList.add('hide')
+        }) 
+    } else {
+        rusText.forEach(elem => {
+            elem.classList.add('hide')
         })
-          
+    }
+
+
+
+
+
+    // Пространство под футером, если высота экрана >= 898
+
+
+
+    if (clientHeight >= 898) {
+        underfooter.classList.remove('hide')
+        underfooter.classList.add('show')
+    }
+
+
+
+
+    // Меню
+      menuBg.style.opacity = 0
+  
+      hamburger.addEventListener('click', (e) => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+        menu.classList.remove('hide')
+        menu.classList.add('show')
+        switch (langMode) {
+            case 'rus':
+                moreEng.style.display = 'none'
+                break;
+            case 'eng':
+                moreRus.style.display = 'none'
+                break;
+        
+            default:
+                break;
+        }
+
+        logo.style.opacity = 0  
+        body.style.overflow = "hidden"
+        menuModal.style.left = `${0}px`
+        menuBg.style.opacity = 0.568
+  
+        menuCloses.forEach(close => {
+            close.addEventListener('click', (ev) => {
+                if (document.documentElement.clientWidth >= 767) {
+                    menuModal.style.left = `${-37}vw`
+                } else {
+                    menuModal.style.left = `${-80}vw`
+                }
+                logo.style.opacity = 1
+                menuBg.style.opacity = 0
+                setTimeout(() => {            
+                    if (ev.target.className == 'menu_modal_logo') {
+                        window.location.href = 'index.html';
+                    }    
+                    body.style.overflow = "visible"
+                    menu.classList.remove('show')
+                    menu.classList.add('hide')
+                }, 1300);
+            })
+        });
+  
+  
+  
+  
+  
+  
+        menuLangRu.addEventListener('click', () => {
+            langMode = 'rus'
+            localStorage.setItem('language', langMode)
+            moreRus.style.display = 'block'
+            moreEng.style.display = 'none'
+            engText.forEach(elem => {
+                elem.classList.add('hide')
+                
+            }) 
+
+            rusText.forEach(elem => {
+                elem.classList.remove('hide')
+                elem.style.opacity = 0
+            })
+            
+            rusText.forEach(elem => {
+                elem.style.transition = '2s all'
+            })
+            setTimeout(() => {
+                rusText.forEach(elem => {
+                    elem.style.opacity = 1 
+                })
+            }, 100);
+        })
+
+        menuLangEng.addEventListener('click', () => {
+            langMode = 'eng'
+            localStorage.setItem('language', langMode)
+            moreEng.style.display = 'block'
+            moreRus.style.display = 'none'
+
+            rusText.forEach(elem => {
+                elem.classList.add('hide')
+            })
+
+            engText.forEach(elem => {
+                elem.classList.remove('hide')
+                elem.style.opacity = 0
+            })
+            
+            engText.forEach(elem => {
+                elem.style.transition = '2s all'
+            })
+            setTimeout(() => {
+                engText.forEach(elem => {
+                    elem.style.opacity = 1 
+                })
+            }, 100);
+        })
+    })
       
+  
     // Регистрация
 
 
-
     formElement.addEventListener('submit', (e) => {
-        const formData = new FormData(formElement);
-        const login = formData.get('entryLoginInput');
-        localStorage.setItem('name', login)
+        if (langMode === 'rus') {
+            const formData = new FormData(formElement);
+            const login = formData.get('entryLoginInputRus');
+            localStorage.setItem('name', login)
+        } else {
+            const formData = new FormData(formElement);
+            const login = formData.get('entryLoginInputEng');
+            localStorage.setItem('name', login)
+        }
     })
 
     regBg.style.opacity = 0
@@ -130,10 +210,16 @@ document.addEventListener('DOMContentLoaded', (e) => {
         el.style.cursor = "pointer"
         el.addEventListener('click', (e) => {
             if (clientWidth >= 768) {
+                if (document.scrollHeight == document.offsetHeight) {
+                    setTimeout(() => {
+                        body.style.overflow = 'hidden'
+                    }, 1310);
+                } else {
+                    body.style.overflow = 'hidden'
+                }
                 body.style.overflow = 'hidden'
                 registr.style.top = `${window.scrollY}px`
                 registr.classList.remove('hide')
-                // registr.classList.add('show')
                 setTimeout(() => {
                     regBg.style.opacity = 1
                 }, 1);
@@ -141,7 +227,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     registr.style.opacity = 0
                     regBg.style.opacity = 0
                     setTimeout(() => {
-                        // registr.classList.remove('show')
                         registr.classList.add('hide')
                         body.style.overflow = 'visible'
                         setTimeout(() => {
@@ -150,7 +235,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     }, 1000);
                 })
             } else {
-                body.style.overflow = 'hidden'
+                if (document.scrollHeight === document.offsetHeight) {
+                    setTimeout(() => {
+                        body.style.overflow = 'hidden'
+                    }, 1310);
+                } else {
+                    body.style.overflow = 'hidden'
+                }
                 appeal.style.top = `${window.scrollY}px`
                 appeal.classList.remove('hide')
                 appeal.classList.add('show')
@@ -218,42 +309,45 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }, 300);
     }
 
-    regBtn.addEventListener('click', (e) => {
-        closing(entryWrapper)
-        questionWrapper.style.opacity = 0
-        questionWrapper.style.display = 'flex'
-        setTimeout(() => {
-            questionWrapper.style.opacity = 1
-        }, 300);
-        regWithEmail.addEventListener('click', (e) => {
-            questionWrapper.style.display = 'none'
-            closing(questionWrapper)
-            opening(withEmailWrapper)
-            formForEmail.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const newData = new FormData(formForEmail);
-                const email = newData.get('entryNewEmailInput');
-                const login = newData.get('entryNewNameInput');
-                const password = newData.get('entryNewPaswordInput');
-                closing(withEmailWrapper)
-                opening(entryWrapper)
+    regBtn.forEach(el => {
+        el.addEventListener('click', (e) => {
+            closing(entryWrapper)
+            questionWrapper.style.opacity = 0
+            questionWrapper.style.display = 'flex'
+            setTimeout(() => {
+                questionWrapper.style.opacity = 1
+            }, 300);
+            regWithEmail.addEventListener('click', (e) => {
+                questionWrapper.style.display = 'none'
+                closing(questionWrapper)
+                opening(withEmailWrapper)
+                formForEmail.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const newData = new FormData(formForEmail);
+                    const email = newData.get('entryNewEmailInput');
+                    const login = newData.get('entryNewNameInput');
+                    const password = newData.get('entryNewPaswordInput');
+                    closing(withEmailWrapper)
+                    opening(entryWrapper)
+                })
+            })
+            regWithPhone.addEventListener('click', (e) => {
+                closing(questionWrapper)
+                questionWrapper.style.display = 'none'
+                opening(withPhoneWrapper)
+                formForPhone.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const newData = new FormData(formForPhone);
+                    const phone = newData.get('entryNewEmailInput');
+                    const login = newData.get('entryNewNameInput');
+                    const password = newData.get('entryNewPaswordInput');
+                    closing(withPhoneWrapper)
+                    opening(entryWrapper)
+                })
             })
         })
-        regWithPhone.addEventListener('click', (e) => {
-            closing(questionWrapper)
-            questionWrapper.style.display = 'none'
-            opening(withPhoneWrapper)
-            formForPhone.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const newData = new FormData(formForPhone);
-                const phone = newData.get('entryNewEmailInput');
-                const login = newData.get('entryNewNameInput');
-                const password = newData.get('entryNewPaswordInput');
-                closing(withPhoneWrapper)
-                opening(entryWrapper)
-            })
-        })
-    })
+    });
+
 
 
 

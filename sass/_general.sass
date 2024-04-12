@@ -5,6 +5,11 @@ nav
     background: rgba(183, 252, 248, 0.34)
     z-index: 99
 
+.eng
+    font-style: "Montserrat"
+    font-weight: 400
+.rus
+    font-style: "Montserrat"
 
 .menu
     position: absolute
@@ -166,6 +171,8 @@ nav
                 padding: 10px
                 text-align: center
                 color: #224F29
+                &_kirov
+                    color: #6a94bd
             &_input
                 position: absolute
                 width: 400px
@@ -211,6 +218,8 @@ nav
                 text-align: center
                 color: #224F29
                 cursor: pointer
+                &_kirov
+                    color: #6a94bd
             &_tree
                 position: absolute
                 height: 200px
@@ -301,6 +310,8 @@ nav
                 background: #c6e9c6
                 border-radius: 28px
                 transition: 1s all
+                &_kirov
+                    background: #99d1ff
             &_input
                 position: absolute
                 width: 400px
@@ -346,6 +357,8 @@ nav
                 background: #c6e9c6
                 border-radius: 28px
                 transition: 1s all
+                &_kirov
+                    background: #99d1ff
             &_input
                 position: absolute
                 width: 400px
@@ -382,7 +395,10 @@ nav
                     background: #222222
 
 
-input[name="entryPasswordInput"]
+input[name="entryPasswordInputRus"]
+    margin: 260px 20px
+
+input[name="entryPasswordInputEng"]
     margin: 260px 20px
 
 input[name="entryNewPaswordInput"]
@@ -394,11 +410,7 @@ input[name="entryNewNameInput"]
 
 
 
-
-
-
-
-
+    
 
 
 
@@ -410,7 +422,7 @@ input[name="entryNewNameInput"]
     padding: 23px
     color: #144A43
     text-align: center
-    font-family: 'Montserrat Alternates'
+    font-family: 'Montserrat'
     font-size: 28px
     font-weight: 500
     &_kirov
@@ -424,6 +436,8 @@ input[name="entryNewNameInput"]
     scale: 0.7
     opacity: 1
     transition: 1s all
+    &_footer
+        height: 88px
     &_title
         scale: 1
         width: 100%
@@ -533,7 +547,7 @@ input[name="entryNewNameInput"]
                 cursor: pointer
                 z-index: 999
                 scale: 2.3
-            &_descr
+            &_descr 
                 position: absolute
                 width: 90%
                 color: #000
@@ -633,7 +647,7 @@ footer
 .btn
     &_footer
         width: 100%
-        height: 60%
+        height: 50px
         border-radius: 15px
         background: #D9D9D9
         border: none
@@ -783,7 +797,7 @@ header
             text-align: center
             color: #000
             font-family: 'Montserrat'
-            font-size: 29px
+            font-size: 27px
             font-weight: 500
             margin-bottom: 700px
             padding: 14px 0 0 0
@@ -805,7 +819,6 @@ header
                 font-weight: 400
             &_price
                 position: absolute
-                display: block
                 width: 23%
                 left: 44px
                 margin: 16px 0 0 0 
@@ -867,7 +880,6 @@ header
                 font-weight: 400
             &_price
                 position: absolute
-                display: block
                 width: 33%
                 left: 44px
                 margin: 17px 0 0 0 

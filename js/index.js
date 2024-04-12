@@ -1,48 +1,81 @@
 document.addEventListener('DOMContentLoaded', (e) => {
     'use strict';
     
+
+
     
-    // Константы меню
+          // Константы меню
     const hamburger = document.querySelector('.hamburger_box'),
           menu = document.querySelector('.menu'),
           menuBg = document.querySelector('.menu_bg'),
           menuModal = document.querySelector('.menu_modal'),
           logo = document.querySelector('.logo'),
-          menuSorry = document.querySelector('.menu_modal_sorry'),
-          menuLang = document.querySelector('.menu_modal_lang'),
-          menuLangChange = document.querySelectorAll('#sorry'),
-          menuLangty = window.getComputedStyle(menuSorry),
-          left = window.getComputedStyle(menuModal),
-          logoty = window.getComputedStyle(logo),
+          menuLangRu = document.querySelector('.menu_modal_lang_ru'),
+          menuLangEng = document.querySelector('.menu_modal_lang_eng'),
+          moreRus = document.querySelector('#modal_rus'),
+          moreEng = document.querySelector('#modal_eng'),
           menuCloses = document.querySelectorAll('#closeMenu'),
-    // Константы блока районов
+          // Константы блока районов
           districts = document.querySelectorAll('.distr'),
           modal = document.querySelector('.district_border_modal'),
           modalText = document.querySelector('.district_border_modal_descr'),
           modalBg = document.querySelector('.district_bg'),
+          left = window.getComputedStyle(menuModal),
           modalCloses = document.querySelectorAll('#closeModal'),
-    // Общие константы
+          // Общие константы
           body = document.querySelector('body'),
-          vw = window.innerWidth / 100,
-          vh = window.innerHeight / 100,
           clientWidth = document.documentElement.clientWidth,
-    // Константы регистрации
+          rusText = document.querySelectorAll('.rus'),
+          engText = document.querySelectorAll('.eng'),
+        // Константы регистрации
           registr = document.querySelector('.registration'),
           openReg = document.getElementsByName("openReg"),
           regBg = document.querySelector('.registration_bg'),
+          regBtn = document.querySelectorAll('.registration_window_entry_regist'),
           entryWrapper = document.querySelector('.registration_window_entry'),
-          formElement = document.getElementById('form'),
-          regBtn = document.querySelector('.registration_window_entry_regist'),
           questionWrapper = document.querySelector('.registration_window_question'),
           regWithEmail = document.querySelector('.registration_window_question_withEmail'),
-          withEmailWrapper = document.querySelector('.registration_window_email_wrapper'),
-          formForEmail = document.getElementById('formForEmail'),
           regWithPhone = document.querySelector('.registration_window_question_withPhone'),
+          withEmailWrapper = document.querySelector('.registration_window_email_wrapper'),
           withPhoneWrapper = document.querySelector('.registration_window_phone_wrapper'),
+          formForEmail = document.getElementById('formForEmail'),
           formForPhone = document.getElementById('formForPhone'),
-    // Константы под мобильные устройства 
-            appeal = document.querySelector('.appeal'),
-            appealText = document.querySelector('.appeal_text');
+          formElement = document.getElementById('form'),
+        // Константы под мобильные устройства 
+          appeal = document.querySelector('.appeal'),
+          appealText = document.querySelector('.appeal_text');
+
+
+
+
+
+    // Языки   
+
+
+  
+  
+    let langMode = 'rus'
+  
+    try {
+        langMode = localStorage.getItem('language', langMode)
+    } catch {}
+  
+
+
+
+    localStorage.setItem('language', langMode)
+    
+    if (langMode === 'rus') {
+        engText.forEach(elem => {
+            elem.classList.add('hide')
+        }) 
+    } else {
+        rusText.forEach(elem => {
+            elem.classList.add('hide')
+        })
+    }
+
+
 
 
 
@@ -51,22 +84,33 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
     formElement.addEventListener('submit', (e) => {
-        const formData = new FormData(formElement);
-        const login = formData.get('entryLoginInput');
-        localStorage.setItem('name', login)
+        if (langMode === 'rus') {
+            const formData = new FormData(formElement);
+            const login = formData.get('entryLoginInputRus');
+            localStorage.setItem('name', login)
+        } else {
+            const formData = new FormData(formElement);
+            const login = formData.get('entryLoginInputEng');
+            localStorage.setItem('name', login)
+        }
     })
 
-    regBg.style.opacity = 0
 
+    regBg.style.opacity = 0
+    
     openReg.forEach(el => {
         el.style.cursor = "pointer"
-
         el.addEventListener('click', (e) => {
-            if (clientWidth >= 768) {            
-                body.style.overflow = 'hidden'
+            if (clientWidth >= 768) {    
+                if (document.scrollHeight == document.offsetHeight) {
+                    setTimeout(() => {
+                        body.style.overflow = 'hidden'
+                    }, 1310);
+                } else {
+                    body.style.overflow = 'hidden'
+                }
                 registr.style.top = `${window.scrollY}px`
                 registr.classList.remove('hide')
-                // registr.classList.add('show')
                 setTimeout(() => {
                     regBg.style.opacity = 1
                 }, 1);
@@ -74,7 +118,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     registr.style.opacity = 0
                     regBg.style.opacity = 0
                     setTimeout(() => {
-                        // registr.classList.remove('show')
                         registr.classList.add('hide')
                         body.style.overflow = 'visible'
                         setTimeout(() => {
@@ -83,7 +126,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     }, 1000);
                 })
             } else {
-                body.style.overflow = 'hidden'
+                if (document.scrollHeight == document.offsetHeight && e.target.className !== 'guide_border_img') {
+                    setTimeout(() => {
+                        body.style.overflow = 'hidden'
+                        console.log(e.target)
+                    }, 1310);
+                } else {
+                    body.style.overflow = 'hidden'
+                }
                 appeal.style.top = `${window.scrollY}px`
                 appeal.classList.remove('hide')
                 appeal.classList.add('show')
@@ -151,49 +201,51 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }, 300);
     }
 
-    regBtn.addEventListener('click', (e) => {
-        closing(entryWrapper)
-        questionWrapper.style.opacity = 0
-        questionWrapper.style.display = 'flex'
-        setTimeout(() => {
-            questionWrapper.style.opacity = 1
-        }, 300);
-        regWithEmail.addEventListener('click', (e) => {
-            questionWrapper.style.display = 'none'
-            closing(questionWrapper)
-            opening(withEmailWrapper)
-            formForEmail.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const newData = new FormData(formForEmail);
-                const email = newData.get('entryNewEmailInput');
-                const login = newData.get('entryNewNameInput');
-                const password = newData.get('entryNewPaswordInput');
-                closing(withEmailWrapper)
-                opening(entryWrapper)
+    regBtn.forEach(element => {        
+        element.addEventListener('click', (e) => {
+            closing(entryWrapper)
+            questionWrapper.style.opacity = 0
+            questionWrapper.style.display = 'flex'
+            setTimeout(() => {
+                questionWrapper.style.opacity = 1
+            }, 300);
+            regWithEmail.addEventListener('click', (e) => {
+                questionWrapper.style.display = 'none'
+                closing(questionWrapper)
+                opening(withEmailWrapper)
+                formForEmail.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const newData = new FormData(formForEmail);
+                    const email = newData.get('entryNewEmailInput');
+                    const login = newData.get('entryNewNameInput');
+                    const password = newData.get('entryNewPaswordInput');
+                    closing(withEmailWrapper)
+                    opening(entryWrapper)
+                })
+            })
+            regWithPhone.addEventListener('click', (e) => {
+                closing(questionWrapper)
+                questionWrapper.style.display = 'none'
+                opening(withPhoneWrapper)
+                formForPhone.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const newData = new FormData(formForPhone);
+                    const phone = newData.get('entryNewEmailInput');
+                    const login = newData.get('entryNewNameInput');
+                    const password = newData.get('entryNewPaswordInput');
+                    closing(withPhoneWrapper)
+                    opening(entryWrapper)
+                })
             })
         })
-        regWithPhone.addEventListener('click', (e) => {
-            closing(questionWrapper)
-            questionWrapper.style.display = 'none'
-            opening(withPhoneWrapper)
-            formForPhone.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const newData = new FormData(formForPhone);
-                const phone = newData.get('entryNewEmailInput');
-                const login = newData.get('entryNewNameInput');
-                const password = newData.get('entryNewPaswordInput');
-                closing(withPhoneWrapper)
-                opening(entryWrapper)
-            })
-        })
-    })
+    });
 
+        
+  
 
     // Меню
 
     menuBg.style.opacity = 0
-    menuSorry.classList.add('hide')
-
     hamburger.addEventListener('click', (e) => {
         window.scrollTo({
             top: 0,
@@ -202,14 +254,25 @@ document.addEventListener('DOMContentLoaded', (e) => {
         });
         menu.classList.remove('hide')
         menu.classList.add('show')
-        const stand = +left.left.replace(/[a-z]+/gi, ''),
-              logot = +logoty.opacity;
+        switch (langMode) {
+            case 'rus':
+                moreEng.style.display = 'none'
+                break;
+            case 'eng':
+                moreRus.style.display = 'none'
+                break;
+        
+            default:
+                break;
+        }
+        const stand = +left.left.replace(/[a-z]+/gi, '')
         logo.style.opacity = 0  
         body.style.overflow = "hidden"
         menuModal.style.left = `${0}px`
         menuBg.style.opacity = 0.568
-        console.log(screen.orientation)
 
+
+        
         menuCloses.forEach(close => {
             close.addEventListener('click', (ev) => {
                 if (clientWidth >= 767) {
@@ -227,29 +290,60 @@ document.addEventListener('DOMContentLoaded', (e) => {
             })
         });
 
-        const menuty = +menuLangty.opacity;
 
 
 
 
+        menuLangRu.addEventListener('click', () => {
+            langMode = 'rus'
+            localStorage.setItem('language', langMode)
+            moreRus.style.display = 'block'
+            moreEng.style.display = 'none'
+            engText.forEach(elem => {
+                elem.classList.add('hide')
+            }) 
 
-        menuLangChange.forEach(el => {
-            el.addEventListener('click', (e) => {
-                menuSorry.classList.remove('hide')
-                menuSorry.classList.add('show')
-                setTimeout(() => {
-                    menuSorry.style.transition = '1s all'
-                    menuSorry.style.opacity = 1
-                }, 100);
-                menuLang.style.opacity = 0
-                setTimeout(() => {
-                    menuLangChange.forEach(elem => elem.remove())
-                }, 1000); 
+            rusText.forEach(elem => {
+                elem.classList.remove('hide')
+                elem.style.opacity = 0
             })
-        });
-    })
-    
+            
+            rusText.forEach(elem => {
+                elem.style.transition = '2s all'
+            })
+            setTimeout(() => {
+                rusText.forEach(elem => {
+                    elem.style.opacity = 1 
+                })
+            }, 100);
+        })
 
+        menuLangEng.addEventListener('click', () => {
+            langMode = 'eng'
+            localStorage.setItem('language', langMode)
+            moreEng.style.display = 'block'
+            moreRus.style.display = 'none'
+            rusText.forEach(elem => {
+                elem.classList.add('hide')
+            })
+
+            engText.forEach(elem => {
+                elem.classList.remove('hide')
+                elem.style.opacity = 0
+            })
+            
+            engText.forEach(elem => {
+                elem.style.transition = '2s all'
+            })
+            setTimeout(() => {
+                engText.forEach(elem => {
+                    elem.style.opacity = 1 
+                })
+            }, 100);
+        })
+    })
+
+        
 
     // Районы
 
@@ -258,7 +352,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     districts.forEach(distr => {
         if (clientWidth <= 767) {
             distr.style.scale = 0.6
-            // distr.style.display = 'none'
         } 
         distr.addEventListener('click', (e) => {
             modalBg.classList.remove('hide')
@@ -268,10 +361,20 @@ document.addEventListener('DOMContentLoaded', (e) => {
             nowDist = e.target
             nowDist.style.zIndex = "999"
             distr.style.transition = '1.5s all'
-            // distr.style.scale = 1.4;
             clientWidth <= 767? distr.style.scale = 0.9 : distr.style.scale = 1.4
-            modalText.textContent = `${e.target.dataset.parent}`
+
+
+
+            if (langMode === 'rus') {
+                modalText.textContent = `${e.target.dataset.parent}`
+            } else{
+                modalText.textContent = `${e.target.dataset.engparent}`
+            }
             
+            console.log(e.target)
+
+
+
             if (clientWidth > 767) {
                 modal.style.left = `${e.target.x - e.target.naturalWidth - 200}px`
                 modal.style.top = `${e.target.y - e.target.naturalHeight - 30}px`
@@ -283,23 +386,30 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 behavior: 'smooth'
             });
 
-            // modalBg.style.top = `${e.target.offsetTop - 100}px`
             body.style.overflow = "hidden"
             modalBg.style.transition = '1s all'
             modalBg.style.opacity = 0.568
             modalBg.style.height = `${body.scrollHeight}px`
 
 
-            if (`${e.target.dataset.parent}` === 'Центр (Кировский Район)') {
+            if (`${e.target.dataset.parent}` === 'Центр (Кировский Район)' || `${e.target.dataset.engParent}` === 'Center (Kirovsky District)'){
                 let button = document.createElement("a");
                 button.classList.add("district_border_modal_confirm")
                 button.href = "kirov.html"
-                button.textContent = 'Перейти'
+                if (langMode === 'rus') {
+                    button.textContent = 'Перейти'
+                } else {
+                    button.textContent = 'Go'
+                }
                 modal.append(button)
             } else {
                 let button = document.createElement("div");
                 button.classList.add("district_border_modal_denide")
-                button.textContent = 'Временно Недоступно, в данный момент работает информация лишь по центру или же кировскому району (закрашен зеленым)'
+                if (langMode === 'rus') {
+                    button.textContent = 'Временно Недоступно, в данный момент работает информация лишь по центру или же кировскому району (закрашен зеленым)'
+                } else {
+                    button.textContent = 'Temporarily Unavailable, at the moment information is available only for the center or the Kirov region (colored green)'
+                }
                 modal.append(button)
             }
 

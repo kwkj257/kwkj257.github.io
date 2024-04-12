@@ -24,7 +24,8 @@
                         <div class="hamburger_box_line"></div>
                     </div>
                 </div>
-                <h1 class="heading col-6 col-md-8">Пожалуйста выберите район</h1>
+                <h1 class="heading col-6 col-md-8 rus">Пожалуйста выберите район</h1>
+                <h1 class="heading col-6 col-md-8 eng">Please select area</h1>
                 <a href="index.html" class="col-3 col-md-2">
                     <img src="icons/logos/Frame 1-2.svg" alt="logo" class="logo logo_title">
                 </a>
@@ -39,25 +40,34 @@
             <div class="menu_modal_logo" id="closeMenu"></div>
             <div href="#" class="menu_modal_profile" id="closeMenu" name="openReg" >
                 <img src="icons/menu/person.svg" alt="bybabyba" class="menu_modal_profile_img">
-                <div class="menu_modal_profile_text">Профиль</div>
+                <div class="menu_modal_profile_text rus">Профиль</div>
+                <div class="menu_modal_profile_text eng">Profile</div>
             </div>
-            <div class="menu_modal_sorry">Мы приносим свои извинения.<br><br>Смена языка временно недоступна</div>
             <div class="menu_modal_lang">
-                <div class="menu_modal_lang_ru" id="sorry"></div>
+                <div class="menu_modal_lang_ru"></div>
                 <div class="menu_modal_lang_divider"></div>
-                <div class="menu_modal_lang_eng" id="sorry"></div>
+                <div class="menu_modal_lang_eng"></div>
             </div>
             <div class="individual individual_modal_menu col-md-2 offset-md-8">
-                <div class="descr descr_modal_menu">Индивидуальный проект</div>
-                <div class="divider"></div>
-                <a href="info.html" class="link_modal_menu">Подробнее</a>
+                <div class="descr descr_modal_menu rus">Индивидуальный проект</div>
+                <div class="descr descr_modal_menu eng">Individual Project</div>
+                <div class="divider"></div> 
+                <a href="info.html" class="link_modal_menu rus" id="modal_rus">Подробнее</a>
+                <a href="info.html" class="link_modal_menu eng" id="modal_eng">More details</a>
             </div>
         </div>
     </div>
 
+
+
+
+
     <div class="appeal hide">
-        <div class="appeal_text">
+        <div class="appeal_text rus">
             К сожалению возможность зайти в профиль,<br>как и некоторые другие<br>реализуются только на десктопных версиях сайта<br><br>Чтобы воспользоваться всеми возможностями зайдите с компьютера<br>(С уважением Tourist Guide)
+        </div>
+        <div class="appeal_text eng">
+            Unfortunately, the ability to log into your profile<br>like some others<br>is implemented only on desktop versions of the site<br><br>To take advantage of all the features, log in from your computer<br>(With respect, Tourist Guide)
         </div>
     </div>
 
@@ -66,17 +76,26 @@
         <div class="container">
             <div class="registration_window">
                 <div class="registration_window_entry">
-                    <div class="registration_window_entry_login">Вход</div>
+                    <div class="registration_window_entry_login rus">Вход</div>
+                    <div class="registration_window_entry_login eng">Login</div>
                     <form class="registration_window_entry_form" action="profile.html" id="form">
-                        <input class="registration_window_entry_input" placeholder="Введите почту, логин, или телефон" name="entryLoginInput" maxlength="40"></input>
-                        <input class="registration_window_entry_input" placeholder="Введите пароль" name="entryPasswordInput"></input>
-                        <button class="registration_window_entry_submit" type="submit" value="Войти">Войти</button>
+                        <input class="registration_window_entry_input rus" placeholder="Введите почту, логин, или телефон"
+                            name="entryLoginInputRus" maxlength="40"></input>
+                        <input class="registration_window_entry_input eng" placeholder="Enter your email, login, or phone"
+                            name="entryLoginInputEng" maxlength="40"></input>
+                        <input class="registration_window_entry_input rus" placeholder="Введите пароль"
+                            name="entryPasswordInputRus"></input>
+                        <input class="registration_window_entry_input eng" placeholder="Enter password"
+                            name="entryPasswordInputEng"></input>
+                        <button class="registration_window_entry_submit rus" type="submit" value="Войти">Войти</button>
+                        <button class="registration_window_entry_submit eng" type="submit" value="Войти">Log in</button>
                     </form>
                     <div class="registration_window_entry_tree"></div>
                     <div class="registration_window_entry_sun"></div>
                     <div class="registration_window_entry_bench"></div>
                     <div class="registration_window_entry_lake"></div>
-                    <div class="registration_window_entry_regist">Зарегистрироваться</div>
+                    <div class="registration_window_entry_regist rus">Зарегистрироваться</div>
+                    <div class="registration_window_entry_regist eng">Registrate</div>
                 </div>
 
 
@@ -84,12 +103,14 @@
                 <div class="registration_window_question" style="display: none;">
 
                     <div class="registration_window_question_withEmail">
-                        <div class="registration_window_question_withEmail_text">Войти через почту</div> 
+                        <div class="registration_window_question_withEmail_text rus">Войти через почту</div> 
+                        <div class="registration_window_question_withEmail_text eng">Log in by email</div> 
                         <div class="registration_window_question_withEmail_img"></div>
                     </div>
 
                     <div class="registration_window_question_withPhone">
-                        <div class="registration_window_question_withPhone_text">Войти по номеру телефона</div> 
+                        <div class="registration_window_question_withPhone_text rus">Войти по номеру телефона</div> 
+                        <div class="registration_window_question_withPhone_text eng">Login by phone</div> 
                         <div class="registration_window_question_withPhone_img"></div>
                     </div>
 
@@ -97,20 +118,30 @@
 
                 <div class="registration_window_email_wrapper hide">
                     <form class="registration_window_email_form" id="formForEmail">
-                        <input class="registration_window_email_input" type="email" placeholder="Введите адрес почты" name="entryNewEmailInput" maxlength="40"></input>
-                        <input class="registration_window_email_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
-                        <input class="registration_window_email_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
-                        <button class="registration_window_email_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                        <input class="registration_window_email_input rus" type="email" placeholder="Введите адрес почты" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_email_input rus" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_email_input rus" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
+
+                        <input class="registration_window_email_input eng" type="email" placeholder="Enter your email address" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_email_input eng" type="text" placeholder="Enter your name" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_email_input eng" type="password" placeholder="Create a password" name="entryNewPaswordInput"></input>
+                        <button class="registration_window_email_submit rus" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                        <button class="registration_window_email_submit eng" type="submit" value="Войти" id="refreshToEntry">Done!</button>
                     </form>
                 </div>          
 
 
                 <div class="registration_window_phone_wrapper hide">
                 <form class="registration_window_phone_form" id="formForPhone">
-                        <input class="registration_window_phone_input" type="tel" placeholder="Введите номер телефона" name="entryNewEmailInput" maxlength="40"></input>
-                        <input class="registration_window_phone_input" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
-                        <input class="registration_window_phone_input" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
-                        <button class="registration_window_phone_submit" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                        <input class="registration_window_phone_input rus" type="tel" placeholder="Введите номер телефона" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input rus" type="text" placeholder="Введите свое имя" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input rus" type="password" placeholder="Придумайте пароль" name="entryNewPaswordInput"></input>
+
+                        <input class="registration_window_phone_input eng" type="tel" placeholder="Enter your phone number" name="entryNewEmailInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input eng" type="text" placeholder="Enter your name" name="entryNewNameInput" maxlength="40"></input>
+                        <input class="registration_window_phone_input eng" type="password" placeholder="Create a password" name="entryNewPaswordInput"></input>
+                        <button class="registration_window_phone_submit rus" type="submit" value="Войти" id="refreshToEntry">Готово!</button>
+                        <button class="registration_window_phone_submit eng" type="submit" value="Войти" id="refreshToEntry">Done!</button>
                     </form>
                 </div>          
 
@@ -124,18 +155,18 @@
         <div class="district_bg hide" id="closeModal"></div>
         <div class="container">
             <div class="district_border col-12 col-md-12">
-                <img src="icons/rayoni/Center.svg" class="district_border_center distr" data-parent="Центр (Кировский Район)"></img>
-                <img src="icons/rayoni/Chernikovka.svg" class="district_border_chernikovka distr" data-parent="Черниковка"></img>
-                <img src="icons/rayoni/Dema.svg" class="district_border_dema distr" data-parent="Дема"></img>
-                <img src="icons/rayoni/I don't know.svg" class="district_border_park distr" data-parent="..."></img>
-                <img src="icons/rayoni/Inors.svg" class="district_border_inors distr" data-parent="Инорс"></img>
-                <img src="icons/rayoni/Nizhegorodka.svg" class="district_border_nizhegorodka distr" data-parent="Нижегородка"></img>
-                <img src="icons/rayoni/ShakSha.svg" class="district_border_shaksha distr" data-parent="Шакша"></img>
-                <img src="icons/rayoni/Sipailovo.svg" class="district_border_sipailovo distr" data-parent="Сипайлово"></img>
-                <img src="icons/rayoni/Something in the Chernikovka.svg" class="district_border_somethingChernuaga distr" data-parent="Трамвайная"></img>
-                <img src="icons/rayoni/Sovietstki rajon.svg" class="district_border_soviet distr" data-parent="Советский район"></img>
-                <img src="icons/rayoni/Zaton.svg" class="district_border_zaton distr" data-parent="Затон"></img>
-                <img src="icons/rayoni/Zelenyaja Roscha.svg" class="district_border_zelenaya distr" data-parent="Зеленая Роща"></img>
+                <img src="icons/rayoni/Center.svg" class="district_border_center distr"  data-engParent="Center (Kirovsky District)" data-parent="Центр (Кировский Район)"></img>
+                <img src="icons/rayoni/Chernikovka.svg" class="district_border_chernikovka distr" data-engParent="Chernikovka" data-parent="Черниковка"></img>
+                <img src="icons/rayoni/Dema.svg" class="district_border_dema distr" data-engParent="Dema" data-parent="Дема"></img>
+                <img src="icons/rayoni/I don't know.svg" class="district_border_park distr" data-engParent="..." data-parent="..."></img>
+                <img src="icons/rayoni/Inors.svg" class="district_border_inors distr" data-engParent="Inors" data-parent="Инорс"></img>
+                <img src="icons/rayoni/Nizhegorodka.svg" class="district_border_nizhegorodka distr" data-engParent="Nizhegorodka" data-parent="Нижегородка"></img>
+                <img src="icons/rayoni/ShakSha.svg" class="district_border_shaksha distr" data-engParent="Shaksha" data-parent="Шакша"></img>
+                <img src="icons/rayoni/Sipailovo.svg" class="district_border_sipailovo distr" data-engParent="Sipailovo" data-parent="Сипайлово"></img>
+                <img src="icons/rayoni/Something in the Chernikovka.svg" class="district_border_somethingChernuaga distr" data-engParent="Tram" data-parent="Трамвайная"></img>
+                <img src="icons/rayoni/Sovietstki rajon.svg" class="district_border_soviet distr" data-engParent="Sovetsky district" data-parent="Советский район"></img>
+                <img src="icons/rayoni/Zaton.svg" class="district_border_zaton distr" data-engParent="Backwater" data-parent="Затон"></img>
+                <img src="icons/rayoni/Zelenyaja Roscha.svg" class="district_border_zelenaya distr" data-engParent="Green Grove" data-parent="Зеленая Роща"></img>
                 <div class="district_border_modal hide">
                     <img src="icons/Group 5.svg" class="district_border_modal_close" id="closeModal"></img>
                     <div class="district_border_modal_descr"></div>
@@ -146,25 +177,30 @@
 
     <section class="guide">
         <div class="container text-center">
-            <div class="guide_title">Как пользоваться сайтом?</div>
+            <div class="guide_title rus">Как пользоваться сайтом?</div>
+            <div class="guide_title eng">How to use the site?</div>
             <div class="row">
             <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4 gy-md-0">
-                    <div class="guide_border_descr">1. Выберите нужный район<br>и кликните на него</div>
+                    <div class="guide_border_descr rus">1. Выберите нужный район<br>и кликните на него</div>
+                    <div class="guide_border_descr eng">1. Select the desired area<br>and click on it</div>
                     <img src="img/main/guide/Rayoni.svg" alt="123" class="guide_border_img" >
                 </div>
 
                 <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4 gy-md-0 ms-md-auto">
-                    <div class="guide_border_descr">2. Подтвердите свой выбор, нажав на кнопку “Перейти”</div>
+                    <div class="guide_border_descr rus">2. Подтвердите свой выбор, нажав на кнопку “Перейти”</div>
+                    <div class="guide_border_descr eng">2. Confirm your choice by clicking on the “Go” button</div>
                     <img src="img/main/guide/Group 10.svg" alt="123" class="guide_border_img">
                 </div>
 
                 <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4">
-                    <div class="guide_border_descr" style="padding-top: 30px; padding-bottom: 50px">3.  Получите подробную<br>информацию о районе</div>
+                    <div class="guide_border_descr rus" style="padding-top: 30px; padding-bottom: 50px">3.  Получите подробную<br>информацию о районе</div>
+                    <div class="guide_border_descr eng" style="padding-top: 30px; padding-bottom: 50px">3. Get detailed<br>information about the area</div>
                     <img src="img/main/guide/Kirovsky Rajonn.svg" alt="123" class="guide_border_img" id="small_imgs">
                 </div>
 
                 <div class="guide_border col-10 offset-1 offset-md-0 col-md-5 gy-4 ms-md-auto">
-                    <div class="guide_border_descr">Также вы можете зарегистрироваться и, зайдя в профиль, голосовать за добавление достопримечательности/отеля/ресторана</div>
+                    <div class="guide_border_descr rus">Также вы можете зарегистрироваться и, зайдя в профиль, голосовать за добавление достопримечательности/отеля/ресторана</div>
+                    <div class="guide_border_descr eng">You can also register and, by going to your profile, vote for adding an attraction/hotel/restaurant</div>
                     <img src="img/main/guide/Group 13.svg" alt="123" class="guide_border_img" id="small_imgs" name="openReg">
                 </div>
             </div>
@@ -176,16 +212,17 @@
             <div class="row">
                 <img src="icons/logos/Small logo.svg" class="logo logo_footer col-6 col-md-2"></img>
                 <div class="individual col-5 offset-1 col-md-2 offset-md-8">
-                    <div class="descr descr_footer">Индивидуальный проект</div>
+                    <div class="descr descr_footer rus">Индивидуальный проект</div>
+                    <div class="descr descr_footer eng">Individual project</div>
                     <div class="divider"></div>
-                    <a href="info.html"><button class="btn btn_footer">Подробнее</button></a>
+                    <a href="info.html"><button class="btn btn_footer rus">Подробнее</button></a>
+                    <a href="info.html"><button class="btn btn_footer eng">More details</button></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="js/index.js"></script>
-    <script src="js/info.js"></script>
-    <script src="js/profile.js"></script>
+    <!-- <script src="js/profile.js"></script> -->
 </body>
 </html>

@@ -1,23 +1,57 @@
 document.addEventListener('DOMContentLoaded', (e) => {
+    let data = localStorage.getItem('language')
+
 
     let i = 0,
         scale = 0.01,
         time = 0;
-    const text = document.querySelectorAll(".info_text"),
-          back = document.querySelector(".back");
+    let text = document.querySelectorAll(".info_text");
+    const back = document.querySelectorAll(".back")
+          rusText = document.querySelectorAll('.rus'),
+          engText = document.querySelectorAll('.eng');
+
+    let langMode = 'rus'
+    
+    langMode = data
+    
+    if (langMode == 'rus') {
+        engText.forEach(elem => {
+            elem.remove()
+        }) 
+    } else {
+        rusText.forEach(elem => {
+            elem.remove()
+        })
+    }
+
+    text = document.querySelectorAll(".info_text"),
+      
 
     text.forEach((tex) => {
         tex.style.scale = 0
+    })
+
+    text.forEach((tex) => {
         tex.style.transition = '1s all'
     })
-    
-    back.style.scale = 0
+
+    console.log(text)
+
+    back.forEach(el => {
+        el.style.scale = 0
+    });
+
+
+
+
 
     function scaling() {
         let waiting = setTimeout(() => {
             let timer = setInterval(() => {
                 scale += 0.01;
-                text[i].style.scale = scale;
+                try {
+                    text[i].style.scale = scale;
+                } catch {}
                 if (scale >= 1) {
                     i++;
                     scale = 0.01;
@@ -29,7 +63,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 scaling()
             } else {
                 setTimeout(() => {
-                    back.style.scale = 1
+                    back.forEach(el => {
+                        el.style.scale = 1
+                    });
                 }, 1500);
             }
         }, time);
@@ -37,18 +73,35 @@ document.addEventListener('DOMContentLoaded', (e) => {
         time = 1000
     }
 
+    
+
     if (i !== 2) {
         scaling()
     }
 
-    back.addEventListener('click', () => {
-        text.forEach((tex) => {
-            tex.style.scale = 0.001
-            back.style.scale = 0
+
+    console.log(window.innerHeight)
+    setTimeout(() => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+        console.log(1)
+    }, 4000);
+
+    
+    back.forEach(el => {        
+        el.addEventListener('click', () => {
+            text.forEach((tex) => {
+                tex.style.scale = 0.001
+                el.style.scale = 0
+            })
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1500);
         })
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 1500);
-    })
+    });
+
+    
 
 })
