@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     text = document.querySelectorAll(".info_text"),
       
+    text.forEach((tex) => {
+        tex.classList.remove('hide')
+    })
 
     text.forEach((tex) => {
         tex.style.scale = 0
@@ -36,6 +39,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
     })
 
     console.log(text)
+
+    back.forEach(el => {
+        el.classList.remove('hide')
+    });
 
     back.forEach(el => {
         el.style.scale = 0
